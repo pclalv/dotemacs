@@ -12,6 +12,14 @@
 ;; Show line numbers
 (global-linum-mode)
 
+;; show whitespace
+;; (global-whitespace-mode 1)
+;; too heavy duty? try:
+;; (setq-default show-trailing-whitespace t)
+
+;; show useless whitespace
+(setq-default show-trailing-whitespace t)
+
 ;; Don't show native toolbar.
 (when (fboundp 'tool-bar-mode)
   (tool-bar-mode -1))
@@ -27,7 +35,7 @@
 (setq-default frame-title-format "%b (%f)")
 
 ;; maximize window on start
-(add-to-list 'default-frame-alist '(fullscreen . maximized)) 
+(add-to-list 'default-frame-alist '(fullscreen . maximized))
 
 ;; Rebalance windows after splitting right (i.e. C-x-3)
 (defadvice split-window-right

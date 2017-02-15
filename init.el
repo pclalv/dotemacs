@@ -37,7 +37,7 @@
 
     ;; integration with a Clojure REPL
     ;; https://github.com/clojure-emacs/cider
-    ;; cider
+    cider
 
     ;; Enhances M-x to allow easier execution of commands. Provides
     ;; a filterable list of possible commands in the minibuffer
@@ -55,7 +55,7 @@
 
     ;;js2 mode
     js2-mode
-    
+
     ;;html mode
     web-mode
 
@@ -63,6 +63,7 @@
       ;; modes
       enh-ruby-mode
       rspec-mode
+      projectile-rails
 
       ;; linting
       rubocop
@@ -94,6 +95,9 @@
 
     ;; completion
     yasnippet
+
+    ;; dockerfile
+    dockerfile-mode
     ))
 
 ;; On OS X, an Emacs instance started from the graphical user
@@ -142,21 +146,34 @@
 ;; Hard-to-categorize customizations
 (load "misc.el")
 
-(load "shell_mode.el")
-
 ;; For editing lisps
 ;; (load "elisp-editing.el")
 
 ;; Langauage-specific
-;; (load "setup-clojure.el")
+(load "setup-clojure.el")
 ;; (load "setup-html.el")
-;; (load "setup-js.el")
+(load "setup-js.el")
 ;; (load "setup-json.el")
 (load "setup-markdown.el")
 (load "setup-makefile.el")
+(load "setup-magit.el")
 (load "setup-org.el")
+(load "setup-projectile.el")
+(load "setup-projectile-rails.el")
 ;; (load "setup-ruby.el")
+(load "setup-shell.el")
 (load "setup-yaml.el")
-
-(setq-default indent-tabs-mode nil
-              tab-width 2)
+(custom-set-variables
+ ;; custom-set-variables was added by Custom.
+ ;; If you edit it by hand, you could mess it up, so be careful.
+ ;; Your init file should contain only one such instance.
+ ;; If there is more than one, they won't work right.
+ '(package-selected-packages
+   (quote
+    (magit clojure-mode js2-mode ac-js2 helm-tramp jsx-mode ycmd yasnippet yaml-mode web-mode tagedit smex rubocop rspec-mode rainbow-delimiters projectile-rails parinfer paredit markdown-mode json-mode helm-projectile helm-ag groovy-mode go-mode go-errcheck flymake-go exec-path-from-shell enh-ruby-mode dockerfile-mode company color-theme-sanityinc-tomorrow clojure-mode-extra-font-locking cider auto-indent-mode ace-window))))
+(custom-set-faces
+ ;; custom-set-faces was added by Custom.
+ ;; If you edit it by hand, you could mess it up, so be careful.
+ ;; Your init file should contain only one such instance.
+ ;; If there is more than one, they won't work right.
+ )

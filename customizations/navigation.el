@@ -34,6 +34,11 @@ point reaches the beginning or end of the buffer, stop there."
 (setq projectile-completion-system 'helm)
 (helm-projectile-on)
 
+;; fix issue where tramp hangs indefinitely
+;; https://github.com/bbatsov/prelude/issues/594#issuecomment-220951394
+;; (add-hook 'text-mode-hook 'projectile-mode)
+;; (add-hook 'prog-mode-hook 'projectile-mode)
+
 ;;helm
 (require 'helm)
 (require 'helm-config)
@@ -45,15 +50,16 @@ point reaches the beginning or end of the buffer, stop there."
 (global-unset-key (kbd "C-x c"))
 
 (global-set-key (kbd "M-x") 'helm-M-x)
+(global-set-key (kbd "C-x b") 'helm-buffers-list)
 (global-set-key (kbd "C-x C-f") 'helm-find-files)
 (global-set-key (kbd "C-c p s t") 'helm-ag-this-file)
 
 ;; rebind tab to run persistent action
-(define-key helm-map (kbd "<tab>") 'helm-execute-persistent-action) 
+(define-key helm-map (kbd "<tab>") 'helm-execute-persistent-action)
 ;; make TAB works in terminal
-(define-key helm-map (kbd "C-i") 'helm-execute-persistent-action) 
+(define-key helm-map (kbd "C-i") 'helm-execute-persistent-action)
 ;; list actions using C-z
-(define-key helm-map (kbd "C-z")  'helm-select-action) 
+(define-key helm-map (kbd "C-z")  'helm-select-action)
 
 (setq helm-split-window-in-side-p           t ; open helm buffer inside current window, not occupy whole other window
       helm-move-to-line-cycle-in-source     t ; move to end or beginning of source when reaching top or bottom of source.
