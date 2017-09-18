@@ -68,3 +68,8 @@ point reaches the beginning or end of the buffer, stop there."
       helm-ff-file-name-history-use-recentf t)
 
 (helm-mode 1)
+
+(require 'zoom-window)
+(global-set-key (kbd "C-x C-z") 'zoom-window-zoom)
+(custom-set-variables
+ '(zoom-window-mode-line-color "DarkGreen"))

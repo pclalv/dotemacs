@@ -53,10 +53,10 @@
     ;; edit html tags like sexps
     tagedit
 
-    ;;js2 mode
+    ;;js2
     js2-mode
 
-    ;;html mode
+    ;;html
     web-mode
 
     ;; ruby
@@ -68,10 +68,12 @@
       ;; linting
       rubocop
 
-    ;; json-mode
+      bundler
+
+    ;; json
     json-mode
 
-    ;; markdown mode
+    ;; markdown
     markdown-mode
 
     ;; helm
@@ -98,6 +100,13 @@
 
     ;; dockerfile
     dockerfile-mode
+
+    zoom-window
+
+    ;; haskell
+    haskell-mode
+
+    highlight-indentation
     ))
 
 ;; On OS X, an Emacs instance started from the graphical user
@@ -141,7 +150,7 @@
 (load "ui.el")
 
 ;; These customizations make editing a bit nicer.
-;; (load "editing.el")
+(load "editing.el")
 
 ;; Hard-to-categorize customizations
 (load "misc.el")
@@ -150,18 +159,21 @@
 ;; (load "elisp-editing.el")
 
 ;; Langauage-specific
+(load "setup-c.el")
 (load "setup-clojure.el")
 ;; (load "setup-html.el")
 (load "setup-js.el")
 ;; (load "setup-json.el")
+;; (load "setup-haskell.el")
 (load "setup-markdown.el")
 (load "setup-makefile.el")
 (load "setup-magit.el")
 (load "setup-org.el")
 (load "setup-projectile.el")
 (load "setup-projectile-rails.el")
-;; (load "setup-ruby.el")
+(load "setup-ruby.el")
 (load "setup-shell.el")
+(load "setup-version-control.el")
 (load "setup-yaml.el")
 (custom-set-variables
  ;; custom-set-variables was added by Custom.
@@ -170,7 +182,8 @@
  ;; If there is more than one, they won't work right.
  '(package-selected-packages
    (quote
-    (magit clojure-mode js2-mode ac-js2 helm-tramp jsx-mode ycmd yasnippet yaml-mode web-mode tagedit smex rubocop rspec-mode rainbow-delimiters projectile-rails parinfer paredit markdown-mode json-mode helm-projectile helm-ag groovy-mode go-mode go-errcheck flymake-go exec-path-from-shell enh-ruby-mode dockerfile-mode company color-theme-sanityinc-tomorrow clojure-mode-extra-font-locking cider auto-indent-mode ace-window))))
+    (highlight-indentation haskell-mode zoom-window tomatinho bundler clojure-mode js2-mode ac-js2 helm-tramp jsx-mode ycmd yasnippet yaml-mode web-mode tagedit smex rubocop rspec-mode rainbow-delimiters projectile-rails parinfer paredit markdown-mode json-mode helm-projectile helm-ag groovy-mode go-mode go-errcheck flymake-go exec-path-from-shell enh-ruby-mode dockerfile-mode company color-theme-sanityinc-tomorrow clojure-mode-extra-font-locking cider auto-indent-mode ace-window)))
+ '(zoom-window-mode-line-color "DarkGreen"))
 (custom-set-faces
  ;; custom-set-faces was added by Custom.
  ;; If you edit it by hand, you could mess it up, so be careful.
