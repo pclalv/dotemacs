@@ -2,6 +2,11 @@
 
 (global-set-key (kbd "M-p") 'ace-window)
 
+(global-set-key (kbd "C-'") 'avy-goto-char)
+(global-set-key (kbd "C-:") 'avy-goto-char-2)
+(global-set-key (kbd "M-g w") 'avy-goto-word-1)
+(global-set-key (kbd "M-g e") 'avy-goto-word-0)
+
 ;; Changing behavior of C-a
 (defun smarter-move-beginning-of-line (arg)
   "Move point back to indentation of beginning of line.
@@ -32,8 +37,8 @@ point reaches the beginning or end of the buffer, stop there."
 ;; projectile everywhere!
 (projectile-global-mode)
 (setq projectile-completion-system 'helm)
+(setq projectile-switch-project-action 'projectile-vc)
 (helm-projectile-on)
-
 ;; fix issue where tramp hangs indefinitely
 ;; https://github.com/bbatsov/prelude/issues/594#issuecomment-220951394
 ;; (add-hook 'text-mode-hook 'projectile-mode)

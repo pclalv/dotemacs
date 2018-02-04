@@ -41,3 +41,12 @@
 (set-keyboard-coding-system 'utf-8)
 (set-selection-coding-system 'utf-8)
 (prefer-coding-system 'utf-8)
+
+;; for mitsuhara's port
+(setq mac-option-modifier 'meta)
+(setq mac-command-modifier 'super)
+
+;; https://www.gnu.org/software/emacs/manual/html_node/emacs/Saving-Emacs-Sessions.html
+;; enable automatic saving of the desktop when you exit Emacs, and
+;; automatic restoration of the last saved desktop when Emacs starts
+(desktop-save-mode 1)

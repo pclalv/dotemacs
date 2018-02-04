@@ -27,9 +27,14 @@
 
 ;; Glue code: Bring it all together...
 (add-hook 'clojure-mode-hook 'parinfer-mode)
-(add-hook 'clojure-mode-hook 'rainbow-delimiters-mode)
 (add-hook 'clojure-mode-hook 'auto-indent-mode)
+(add-hook 'cider-repl-mode-hook #'company-mode)
+(add-hook 'cider-mode-hook #'company-mode)
 ;; (add-hook 'clojure-mode-hook 'clj-refactor-hooks)
-;; (add-hook 'clojure-mode-hook 'auto-complete-mode)
 (add-to-list 'auto-mode-alist '("\\.cljs\\'" . clojure-mode))
 (add-to-list 'auto-mode-alist '("\\.cljx\\'" . clojure-mode))
+
+
+(setq cider-annotate-completion-candidates t)
+(setq cider-stacktrace-suppressed-errors nil)
+
