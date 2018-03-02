@@ -33,21 +33,10 @@ point reaches the beginning or end of the buffer, stop there."
 (global-set-key [remap move-beginning-of-line]
                 'smarter-move-beginning-of-line)
 
-;; projectile
-;; projectile everywhere!
-(projectile-global-mode)
-(setq projectile-completion-system 'helm)
-(setq projectile-switch-project-action 'projectile-vc)
-(helm-projectile-on)
-;; fix issue where tramp hangs indefinitely
-;; https://github.com/bbatsov/prelude/issues/594#issuecomment-220951394
-;; (add-hook 'text-mode-hook 'projectile-mode)
-;; (add-hook 'prog-mode-hook 'projectile-mode)
-
 ;;helm
 (require 'helm)
 (require 'helm-config)
-
+(helm-projectile-on)
 ;; The default "C-x c" is quite close to "C-x C-c", which quits Emacs.
 ;; Changed to "C-c h". Note: We must set "C-c h" globally, because we
 ;; cannot change `helm-command-prefix-key' once `helm-config' is loaded.
@@ -78,3 +67,14 @@ point reaches the beginning or end of the buffer, stop there."
 (global-set-key (kbd "C-x C-z") 'zoom-window-zoom)
 (custom-set-variables
  '(zoom-window-mode-line-color "DarkGreen"))
+
+;; projectile
+;; projectile everywhere!
+(projectile-global-mode)
+(setq projectile-completion-system 'helm
+      projectile-switch-project-action 'projectile-vc)
+;;; fix issue where tramp hangs indefinitely
+;; https://github.com/bbatsov/prelude/issues/594#issuecomment-220951394
+;; (add-hook 'text-mode-hook 'projectile-mode)
+;; (add-hook 'prog-mode-hook 'projectile-mode)
+

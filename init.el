@@ -1,13 +1,18 @@
 (require 'package)
 
+;; TODO: ensure emacs is enforcing TLS
+;; https://glyph.twistedmatrix.com/2015/11/editor-malware.html#fnref:4
+;; $ brew uninstall emacs-mac && brew install emacs-mac --with-gnutls
+;; (setq tls-checktrust t)
+
 (add-to-list 'package-archives
-             '("melpa-stable" . "http://stable.melpa.org/packages/") t)
+             '("melpa-stable" . "https://stable.melpa.org/packages/") t)
+;; (add-to-list 'package-archives
+;;              '("marmalade" . "http://marmalade-repo.org/packages/") t)
+;; (add-to-list 'package-archives
+;;              '("tromey" . "http://tromey.com/elpa/") t)
 (add-to-list 'package-archives
-             '("marmalade" . "http://marmalade-repo.org/packages/") t)
-(add-to-list 'package-archives
-             '("tromey" . "http://tromey.com/elpa/") t)
-(add-to-list 'package-archives
-             '("melpa" . "http://melpa.milkbox.net/packages/") t)
+             '("melpa" . "https://melpa.milkbox.net/packages/") t)
 
 ;; Load and activate emacs packages. Do this first so that the
 ;; packages are loaded before you start trying to modify them.
