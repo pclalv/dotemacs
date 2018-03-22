@@ -184,6 +184,7 @@
 (load "setup-projectile-rails.el")
 (load "setup-ruby.el")
 (load "setup-shell.el")
+(load "setup-smalltalk.el")
 (load "setup-version-control.el")
 (load "setup-yaml.el")
 (custom-set-variables
