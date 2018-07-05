@@ -52,9 +52,6 @@
     ;; project navigation
     projectile
 
-    ;; colorful parenthesis matching
-    rainbow-delimiters
-
     ;; edit html tags like sexps
     tagedit
 
