@@ -3,7 +3,7 @@
 (add-hook 'js-mode-hook 'js2-minor-mode)
 (add-hook 'js2-mode-hook 'ac-js2-mode)
 
-(setq-local js-indent-level 2)
+(setq js-indent-level 2)
 
 (setq js2-highlight-level 3)
 

@@ -34,7 +34,6 @@
 (add-to-list 'auto-mode-alist '("\\.cljs\\'" . clojure-mode))
 (add-to-list 'auto-mode-alist '("\\.cljx\\'" . clojure-mode))
 
-
 (setq cider-annotate-completion-candidates t)
 (setq cider-stacktrace-suppressed-errors nil)
 

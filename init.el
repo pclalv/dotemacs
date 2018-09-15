@@ -12,7 +12,7 @@
 ;; (add-to-list 'package-archives
 ;;              '("tromey" . "http://tromey.com/elpa/") t)
 (add-to-list 'package-archives
-             '("melpa" . "https://melpa.milkbox.net/packages/") t)
+             '("melpa" . "https://melpa.org/packages/") t)
 
 ;; Load and activate emacs packages. Do this first so that the
 ;; packages are loaded before you start trying to modify them.
@@ -173,6 +173,7 @@
 ;; (load "setup-json.el")
 ;; (load "setup-haskell.el")
 (load "setup-groovy.el")
+(load "setup-lisps.el")
 (load "setup-markdown.el")
 (load "setup-makefile.el")
 (load "setup-magit.el")
@@ -185,6 +186,9 @@
 (load "setup-version-control.el")
 (load "setup-yaml.el")
 (load "setup-wanderlust.el")
+
+(setq inhibit-startup-screen t)
+
 (custom-set-variables
  ;; custom-set-variables was added by Custom.
  ;; If you edit it by hand, you could mess it up, so be careful.
@@ -193,7 +197,7 @@
  '(magit-log-section-arguments (quote ("--decorate" "-n256")))
  '(package-selected-packages
    (quote
-    (org-bullets wanderlust nhexl-mode avy alchemist elixir-mode highlight-indentation haskell-mode zoom-window tomatinho bundler js2-mode ac-js2 helm-tramp jsx-mode ycmd yasnippet yaml-mode web-mode tagedit smex rubocop rspec-mode rainbow-delimiters projectile-rails parinfer paredit markdown-mode json-mode helm-projectile helm-ag groovy-mode go-mode go-errcheck flymake-go exec-path-from-shell enh-ruby-mode dockerfile-mode company color-theme-sanityinc-tomorrow clojure-mode-extra-font-locking cider auto-indent-mode ace-window)))
+    (magit wanderlust nhexl-mode avy alchemist elixir-mode highlight-indentation haskell-mode zoom-window tomatinho bundler js2-mode ac-js2 helm-tramp jsx-mode ycmd yasnippet yaml-mode web-mode tagedit smex rubocop rspec-mode projectile-rails parinfer paredit markdown-mode json-mode helm-projectile helm-ag groovy-mode go-mode go-errcheck flymake-go exec-path-from-shell enh-ruby-mode dockerfile-mode company color-theme-sanityinc-tomorrow clojure-mode-extra-font-locking cider auto-indent-mode ace-window)))
  '(zoom-window-mode-line-color "DarkGreen"))
 (custom-set-faces
  ;; custom-set-faces was added by Custom.
