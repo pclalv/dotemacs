@@ -46,3 +46,6 @@
 ;; for mitsuhara's port
 (setq mac-option-modifier 'meta)
 (setq mac-command-modifier 'super)
+
+;; disable this useless binding
+(global-set-key (kbd "C-<tab>") nil)
