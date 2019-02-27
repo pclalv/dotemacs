@@ -1,5 +1,6 @@
 ;; monkey patch this function so that it saves the buffer after it performs
 ;; the replacement
+
 (defun tags-query-replace (from to &optional delimited file-list-form)
   "Do `query-replace-regexp' of FROM with TO on all files listed in tags table.
 Third arg DELIMITED (prefix arg) means replace only word-delimited matches.
@@ -25,3 +26,7 @@ See also the documentation of the variable `tags-file-name'."
                                                   nil multi-query-replace-map)
                                   (save-buffer)))
   (tags-loop-continue (or file-list-form t)))
+
+(define-key projectile-mode-map (kbd "C-c p") 'projectile-command-map)
+(require 'helm-projectile)
+(helm-projectile-on)
