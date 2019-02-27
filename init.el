@@ -62,15 +62,15 @@
     web-mode
 
     ;; ruby
-      ;; modes
-      enh-ruby-mode
-      rspec-mode
-      projectile-rails
+    ;; modes
+    enh-ruby-mode
+    rspec-mode
+    projectile-rails
 
-      ;; linting
-      rubocop
+    ;; linting
+    rubocop
 
-      bundler
+    bundler
 
     ;; json
     json-mode
@@ -204,7 +204,7 @@
  '(magit-log-section-arguments (quote ("--decorate" "-n256")))
  '(package-selected-packages
    (quote
-    (merlin tuareg clojure-mode magit wanderlust nhexl-mode avy alchemist elixir-mode highlight-indentation haskell-mode zoom-window tomatinho bundler js2-mode ac-js2 helm-tramp jsx-mode ycmd yasnippet yaml-mode web-mode tagedit smex rubocop rspec-mode projectile-rails parinfer paredit markdown-mode json-mode helm-projectile helm-ag groovy-mode go-mode go-errcheck flymake-go exec-path-from-shell enh-ruby-mode dockerfile-mode company color-theme-sanityinc-tomorrow clojure-mode-extra-font-locking cider auto-indent-mode ace-window)))
+    (eglot utop merlin tuareg clojure-mode magit wanderlust nhexl-mode avy alchemist elixir-mode highlight-indentation haskell-mode zoom-window tomatinho bundler js2-mode ac-js2 helm-tramp jsx-mode ycmd yasnippet yaml-mode web-mode tagedit smex rubocop rspec-mode projectile-rails parinfer paredit markdown-mode json-mode helm-projectile helm-ag groovy-mode go-mode go-errcheck flymake-go exec-path-from-shell enh-ruby-mode dockerfile-mode company color-theme-sanityinc-tomorrow clojure-mode-extra-font-locking cider auto-indent-mode ace-window)))
  '(zoom-window-mode-line-color "DarkGreen"))
 (custom-set-faces
  ;; custom-set-faces was added by Custom.
