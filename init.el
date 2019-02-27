@@ -116,6 +116,8 @@
 
     merlin
     tuareg
+
+    eglot
     ))
 
 ;; On OS X, an Emacs instance started from the graphical user
@@ -170,6 +172,7 @@
 ;; Langauage-specific
 (load "setup-c.el")
 (load "setup-clojure.el")
+(load "setup-eglot.el")
 ;; (load "setup-elixir.el")
 ;; (load "setup-html.el")
 (load "setup-js.el")
