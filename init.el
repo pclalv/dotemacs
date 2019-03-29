@@ -80,7 +80,7 @@
 
     ;; helm
     helm
-    helm-ag
+    helm-rg
     helm-projectile
 
     ;; go
