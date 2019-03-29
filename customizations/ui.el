@@ -12,11 +12,6 @@
 ;; Show line numbers
 (global-linum-mode)
 
-;; show whitespace
-;; (global-whitespace-mode 1)
-;; too heavy duty? try:
-;; (setq-default show-trailing-whitespace t)
-
 ;; show useless whitespace
 (setq-default show-trailing-whitespace t)
 
