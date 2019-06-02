@@ -174,6 +174,7 @@
 (load "setup-clojure.el")
 (load "setup-eglot.el")
 ;; (load "setup-elixir.el")
+(load "setup-go.el")
 ;; (load "setup-html.el")
 (load "setup-js.el")
 ;; (load "setup-json.el")
