@@ -75,10 +75,10 @@ point reaches the beginning or end of the buffer, stop there."
 ;; Changed to "C-c h". Note: We must set "C-c h" globally, because we
 ;; cannot change `helm-command-prefix-key' once `helm-config' is loaded.
 
-(require 'zoom-window)
-(global-set-key (kbd "C-x C-z") 'zoom-window-zoom)
-(custom-set-variables
- '(zoom-window-mode-line-color "DarkGreen"))
+(use-package zoom-window
+  :config
+  (custom-set-variables '(zoom-window-mode-line-color "DarkGreen"))
+  :bind ("C-x C-z" . zoom-window-zoom))
 
 ;; projectile
 ;; projectile everywhere!
