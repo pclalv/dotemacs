@@ -95,3 +95,8 @@ point reaches the beginning or end of the buffer, stop there."
 ;; https://github.com/bbatsov/prelude/issues/594#issuecomment-220951394
 ;; (add-hook 'text-mode-hook 'projectile-mode)
 ;; (add-hook 'prog-mode-hook 'projectile-mode)
+
+(use-package magit
+  :config
+  ;; per https://magit.vc/manual/magit/Performance.html#Performance
+  (setq vc-handled-backends nil))
