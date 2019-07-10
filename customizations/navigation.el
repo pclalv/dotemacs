@@ -57,10 +57,8 @@ point reaches the beginning or end of the buffer, stop there."
   (helm-mode 1)
   ;; The default `helm-command-prefix' "C-x c" is quite close to "C-x
   ;; C-c", which quits Emacs.
-  (global-unset-key (kbd "C-x c"))
   :bind
-  (("C-c h" . helm-command-prefix)
-   ("M-x" . helm-M-x)
+  (("M-x" . helm-M-x)
    ("C-x b" . helm-buffers-list)
    ("C-x C-f" . helm-find-files)
    :map helm-map
@@ -72,9 +70,9 @@ point reaches the beginning or end of the buffer, stop there."
 (use-package helm-projectile
   :demand t
   :requires (helm projectile)
+  :bind (:map helm-command-map ("s" . helm-ag-this-file))
   :config
   (helm-projectile-on)
-  :bind ("C-c p s t" . helm-ag-this-file))
   (setq projectile-completion-system 'helm))
 
 (use-package helm-ag
