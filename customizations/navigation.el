@@ -34,6 +34,17 @@ point reaches the beginning or end of the buffer, stop there."
 (global-set-key [remap move-beginning-of-line]
                 'smarter-move-beginning-of-line)
 
+(use-package projectile
+  ;; :straight t
+  :bind-keymap
+  ("C-c p" . projectile-command-map)
+  :config
+  (projectile-global-mode)
+  (setq projectile-switch-project-action 'projectile-vc)
+  (add-to-list 'projectile-globally-ignored-directories "log")
+  (add-to-list 'projectile-globally-ignored-directories "tmp")
+  (add-to-list 'projectile-globally-ignored-directories "vendor"))
+
 (use-package helm
   :config
   (require 'helm-config)

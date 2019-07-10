@@ -25,14 +25,3 @@
 ;;                                                   nil multi-query-replace-map)
 ;;                                   (save-buffer)))
 ;;   (tags-loop-continue (or file-list-form t)))
-
-(use-package projectile
-  ;; :straight t
-  :bind-keymap
-  ("C-c p" . projectile-command-map)
-  :config
-  (projectile-global-mode)
-  (setq projectile-switch-project-action 'projectile-vc)
-  (add-to-list 'projectile-globally-ignored-directories "log")
-  (add-to-list 'projectile-globally-ignored-directories "tmp")
-  (add-to-list 'projectile-globally-ignored-directories "vendor"))
