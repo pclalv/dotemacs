@@ -1,11 +1,12 @@
-(autoload 'ace-winow "ace-window")
+(use-package ace-window
+  :bind ("M-p" . ace-window))
 
-(global-set-key (kbd "M-p") 'ace-window)
-
-(global-set-key (kbd "C-'") 'avy-goto-char)
-(global-set-key (kbd "C-:") 'avy-goto-char-2)
-(global-set-key (kbd "M-g w") 'avy-goto-word-1)
-(global-set-key (kbd "M-g e") 'avy-goto-word-0)
+(use-package avy
+  :bind
+  (("C-'" . avy-goto-char)
+   ("C-:" . avy-goto-char-2)
+   ("M-g w" . avy-goto-word-1)
+   ("M-g e" . avy-goto-word-0)))
 
 ;; Changing behavior of C-a
 (defun smarter-move-beginning-of-line (arg)
