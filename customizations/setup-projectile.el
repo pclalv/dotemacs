@@ -26,7 +26,13 @@
 ;;                                   (save-buffer)))
 ;;   (tags-loop-continue (or file-list-form t)))
 
-
-(define-key projectile-mode-map (kbd "C-c p") 'projectile-command-map)
-(require 'helm-projectile)
-(helm-projectile-on)
+(use-package projectile
+  ;; :straight t
+  :bind-keymap
+  ("C-c p" . projectile-command-map)
+  :config
+  (projectile-global-mode)
+  (setq projectile-switch-project-action 'projectile-vc)
+  (add-to-list 'projectile-globally-ignored-directories "log")
+  (add-to-list 'projectile-globally-ignored-directories "tmp")
+  (add-to-list 'projectile-globally-ignored-directories "vendor"))
