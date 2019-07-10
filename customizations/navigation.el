@@ -35,7 +35,7 @@ point reaches the beginning or end of the buffer, stop there."
                 'smarter-move-beginning-of-line)
 
 (use-package projectile
-  ;; :straight t
+  :demand t
   :bind-keymap
   ("C-c p" . projectile-command-map)
   :config
@@ -46,6 +46,7 @@ point reaches the beginning or end of the buffer, stop there."
   (add-to-list 'projectile-globally-ignored-directories "vendor"))
 
 (use-package helm
+  :demand t
   :config
   (require 'helm-config)
   (setq helm-split-window-in-side-p           t ; open helm buffer inside current window, not occupy whole other window
@@ -71,6 +72,7 @@ point reaches the beginning or end of the buffer, stop there."
    ("C-z" . helm-select-action)))
 
 (use-package helm-projectile
+  :demand t
   :requires (helm projectile)
   :config
   (helm-projectile-on)
