@@ -76,9 +76,8 @@ point reaches the beginning or end of the buffer, stop there."
   :requires (helm projectile)
   :config
   (helm-projectile-on)
-  (setq projectile-completion-system 'helm
-        projectile-switch-project-action 'projectile-vc)
   :bind ("C-c p s t" . helm-ag-this-file))
+  (setq projectile-completion-system 'helm))
 
 (use-package helm-ag
   :requires helm
