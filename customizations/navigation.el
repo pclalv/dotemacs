@@ -60,7 +60,6 @@ point reaches the beginning or end of the buffer, stop there."
    ("M-x" . helm-M-x)
    ("C-x b" . helm-buffers-list)
    ("C-x C-f" . helm-find-files)
-   ("C-c p s t" . helm-ag-this-file)
    :map helm-map
    ;; rebind tab to run persistent action
    ("<tab>" . helm-execute-persistent-action)
@@ -72,7 +71,11 @@ point reaches the beginning or end of the buffer, stop there."
 (use-package helm-projectile
   :requires (helm projectile)
   :config
-  (helm-projectile-on))
+  (helm-projectile-on)
+  (projectile-global-mode)
+  (setq projectile-completion-system 'helm
+        projectile-switch-project-action 'projectile-vc)
+  :bind ("C-c p s t" . helm-ag-this-file))
 
 (use-package helm-ag
   :requires helm
@@ -91,13 +94,7 @@ point reaches the beginning or end of the buffer, stop there."
   (custom-set-variables '(zoom-window-mode-line-color "DarkGreen"))
   :bind ("C-x C-z" . zoom-window-zoom))
 
-;; projectile
-;; projectile everywhere!
-(projectile-global-mode)
-(setq projectile-completion-system 'helm
-      projectile-switch-project-action 'projectile-vc)
 ;;; fix issue where tramp hangs indefinitely
 ;; https://github.com/bbatsov/prelude/issues/594#issuecomment-220951394
 ;; (add-hook 'text-mode-hook 'projectile-mode)
 ;; (add-hook 'prog-mode-hook 'projectile-mode)
-
