@@ -33,10 +33,23 @@ point reaches the beginning or end of the buffer, stop there."
 (global-set-key [remap move-beginning-of-line]
                 'smarter-move-beginning-of-line)
 
-;;helm
-(require 'helm)
-(require 'helm-config)
-(helm-projectile-on)
+(use-package helm
+  :config
+  (require 'helm-config))
+
+(use-package helm-projectile
+  :requires (helm projectile)
+  :config
+  (helm-projectile-on))
+
+(use-package helm-ag
+  :requires helm
+  :config
+  (add-to-list 'grep-find-ignored-directories "log")
+  (add-to-list 'grep-find-ignored-directories "tmp")
+  (add-to-list 'grep-find-ignored-directories "vendor")
+  (add-to-list 'grep-find-ignored-directories "coverage"))
+
 ;; The default "C-x c" is quite close to "C-x C-c", which quits Emacs.
 ;; Changed to "C-c h". Note: We must set "C-c h" globally, because we
 ;; cannot change `helm-command-prefix-key' once `helm-config' is loaded.
