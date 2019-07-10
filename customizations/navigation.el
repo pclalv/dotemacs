@@ -54,6 +54,8 @@ point reaches the beginning or end of the buffer, stop there."
         helm-scroll-amount                    8 ; scroll 8 lines other window using M-<next>/M-<prior>
         helm-ff-file-name-history-use-recentf t)
   (helm-mode 1)
+  ;; The default `helm-command-prefix' "C-x c" is quite close to "C-x
+  ;; C-c", which quits Emacs.
   (global-unset-key (kbd "C-x c"))
   :bind
   (("C-c h" . helm-command-prefix)
@@ -83,10 +85,6 @@ point reaches the beginning or end of the buffer, stop there."
   (add-to-list 'grep-find-ignored-directories "tmp")
   (add-to-list 'grep-find-ignored-directories "vendor")
   (add-to-list 'grep-find-ignored-directories "coverage"))
-
-;; The default "C-x c" is quite close to "C-x C-c", which quits Emacs.
-;; Changed to "C-c h". Note: We must set "C-c h" globally, because we
-;; cannot change `helm-command-prefix-key' once `helm-config' is loaded.
 
 (use-package zoom-window
   :config
