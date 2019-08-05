@@ -1,5 +1,5 @@
 (use-package ace-window
-  :bind ("M-p" . ace-window))
+  :bind ("C-x o" . ace-window))
 
 (use-package avy
   :bind
