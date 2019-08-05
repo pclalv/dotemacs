@@ -13,7 +13,8 @@
   (defun my-projectile-project-find-function (dir)
     (let ((root (projectile-project-root dir)))
       (and root (cons 'transient root))))
-  (add-to-list 'project-find-functions 'my-projectile-project-find-function))
+  (add-to-list 'project-find-functions 'my-projectile-project-find-function)
+  (add-to-list 'eglot-server-programs '(go-mode . ("/Users/paulalvarez/code/go/bin/gopls"))))
 
 ;; this didn't work; cryptic error message
 ;; (add-to-list 'eglot-server-programs '(clojure-mode . ("/Users/paulalvarez/bin/clojure-lsp")))
