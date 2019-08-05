@@ -1,9 +1,8 @@
-(require 'package)
-
-;; TODO: ensure emacs is enforcing TLS
+;; ensure emacs is enforcing TLS
 ;; https://glyph.twistedmatrix.com/2015/11/editor-malware.html#fnref:4
-;; $ brew uninstall emacs-mac && brew install emacs-mac --with-gnutls
-;; (setq tls-checktrust t)
+(setq tls-checktrust t)
+
+(require 'package)
 
 (add-to-list 'package-archives
              '("melpa-stable" . "https://stable.melpa.org/packages/") t)
