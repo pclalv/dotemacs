@@ -81,7 +81,8 @@ point reaches the beginning or end of the buffer, stop there."
   (add-to-list 'grep-find-ignored-directories "log")
   (add-to-list 'grep-find-ignored-directories "tmp")
   (add-to-list 'grep-find-ignored-directories "vendor")
-  (add-to-list 'grep-find-ignored-directories "coverage"))
+  (add-to-list 'grep-find-ignored-directories "coverage")
+  (add-to-list 'grep-find-ignored-directories "node_modules"))
 
 (use-package zoom-window
   :config
