@@ -173,6 +173,7 @@
 ;; Langauage-specific
 (load "setup-c.el")
 (load "setup-clojure.el")
+(load "setup-dsssl-mode.el")
 (load "setup-eglot.el")
 ;; (load "setup-elixir.el")
 (load "setup-go.el")
