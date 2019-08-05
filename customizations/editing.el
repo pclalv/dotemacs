@@ -11,3 +11,11 @@
 ;; i'd really like for electric pair to highlight angle brackets...
 ;; (modify-syntax-entry ?< "(>")
 ;; (modify-syntax-entry ?> ")<")
+
+(use-package yasnippet
+  :demand t
+  :config
+  (yas-global-mode 1)
+  (add-to-list 'load-path "~/.emacs.d/elpa/yasnippet-0.10.0/")
+  (eval-after-load 'rspec-mode
+   '(rspec-install-snippets)))
