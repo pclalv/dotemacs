@@ -1,11 +1,3 @@
-(use-package ruby-mode
-  :straight t)
-
-(use-package rspec-mode
-  :straight t)
-
-(use-package inf-ruby
-  :straight t)
 
 (use-package highlight-indentation
   :straight t
