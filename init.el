@@ -139,6 +139,12 @@
 
 ;; languages
 
+;;;;;;;
+;; c ;;
+;;;;;;;
+
+(add-hook 'c-mode-hook 'electric-pair-mode)
+
 ;;;;;;;;;;;;;
 ;; clojure ;;
 ;;;;;;;;;;;;;
