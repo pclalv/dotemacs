@@ -55,27 +55,3 @@
   (add-to-list 'grep-find-ignored-directories "vendor")
   (add-to-list 'grep-find-ignored-directories "coverage")
   (add-to-list 'grep-find-ignored-directories "node_modules"))
-
-(use-package zoom-window
-  :straight t
-  :config
-  (setq zoom-window-mode-line-color "DarkGreen")
-  :bind ("C-x C-z" . zoom-window-zoom))
-
-;;; fix issue where tramp hangs indefinitely
-;; https://github.com/bbatsov/prelude/issues/594#issuecomment-220951394
-;; (add-hook 'text-mode-hook 'projectile-mode)
-;; (add-hook 'prog-mode-hook 'projectile-mode)
-
-(use-package magit
-  :straight t
-  :bind ("C-x g" . magit-status)
-  :config
-  ;; per https://magit.vc/manual/magit/Performance.html#Performance
-  (setq vc-handled-backends nil)
-  (remove-hook 'magit-refs-sections-hook 'magit-insert-tags)
-
-  (defun magit-open (&optional args)
-    "Open the current file in github."
-    (interactive (list (magit-commit-arguments)))
-    (magit-run-git "open" (magit-file-relative-name))))
