@@ -44,7 +44,6 @@
          (t
           (rename-file filename new-name t)
           (set-visited-file-name new-name t t)))))))
-
 (global-set-key (kbd "C-x C-r") 'rename-file-and-buffer)
 
 ;; Changing behavior of C-a
@@ -68,10 +67,45 @@ point reaches the beginning or end of the buffer, stop there."
     (back-to-indentation)
     (when (= orig-point (point))
       (move-beginning-of-line 1))))
-
-;; remap C-a to `smarter-move-beginning-of-line'
 (global-set-key [remap move-beginning-of-line]
                 'smarter-move-beginning-of-line)
+
+;; improvements to builtins
+
+(defadvice split-window-right
+  (after rebalance-windows activate)
+  (balance-windows))
+(ad-activate 'split-window-right)
+
+(defadvice delete-window
+  (after rebalance-windows activate)
+  (balance-windows))
+(ad-activate 'delete-window)
+
+(defadvice split-window-below
+  (after rebalance-windows activate)
+  (balance-windows))
+(ad-activate 'split-window-below)
+
+(defun my-find-file-hook ()
+  "Buffer local settings for buffers that are actually files."
+  (setq indicate-empty-lines t
+        show-trailing-whitespace t))
+(add-hook 'find-file-hooks 'my-find-file-hook)
+
+;; maximize window on start
+(add-to-list 'default-frame-alist '(fullscreen . maximized))
+
+;; full path in title bar
+(setq-default frame-title-format "%b (%f)")
+
+(global-linum-mode)
+
+(set-face-attribute 'linum nil :height 100)
+
+;; don't make me type "yes" or "no"
+(defalias 'yes-or-no-p 'y-or-n-p)
+
 ;; packages
 
 ;; boilerplate from https://github.com/raxod502/straight.el/blob/develop/README.md#getting-started
@@ -313,12 +347,9 @@ point reaches the beginning or end of the buffer, stop there."
 (add-to-list 'load-path "~/.emacs.d/customizations")
 
 (load "navigation.el")
-(load "editing.el")
 (load "misc.el")
 
-(load "setup-c.el")
 (load "setup-clojure.el")
-(load "setup-dsssl-mode.el")
 (load "setup-ocaml.el")
 (load "setup-org.el")
 (load "setup-projectile-rails.el")
