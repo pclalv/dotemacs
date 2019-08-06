@@ -16,22 +16,8 @@
 ;; don't make me type "yes" or "no"
 (defalias 'yes-or-no-p 'y-or-n-p)
 
-;; Turn off the menu bar at the top of each frame because it's distracting
-(menu-bar-mode -1)
-
 ;; Show line numbers
 (global-linum-mode)
-
-;; Don't show native toolbar.
-(when (fboundp 'tool-bar-mode)
-  (tool-bar-mode -1))
-
-;; Don't show native OS scroll bars for buffers because they're redundant
-(when (fboundp 'scroll-bar-mode)
-  (scroll-bar-mode -1))
-
-;; no bell
-(setq ring-bell-function 'ignore)
 
 ;; full path in title bar
 (setq-default frame-title-format "%b (%f)")
