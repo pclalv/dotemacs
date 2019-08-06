@@ -137,13 +137,3 @@
  ;; If there is more than one, they won't work right.
  '(inf-ruby-default-implementation "pry")
  '(magit-log-section-arguments (quote ("--decorate" "-n256")))
- '(package-selected-packages
-   (quote
-    (use-package rbenv lsp-mode helm-go-package terraform-mode eglot utop merlin tuareg clojure-mode magit nhexl-mode avy alchemist elixir-mode highlight-indentation haskell-mode zoom-window tomatinho bundler ac-js2 helm-tramp ycmd yasnippet yaml-mode web-mode tagedit smex rubocop rspec-mode projectile-rails parinfer paredit markdown-mode json-mode helm-projectile helm-ag groovy-mode go-mode go-errcheck flymake-go exec-path-from-shell enh-ruby-mode dockerfile-mode company color-theme-sanityinc-tomorrow clojure-mode-extra-font-locking cider auto-indent-mode ace-window)))
- '(zoom-window-mode-line-color "DarkGreen"))
-(custom-set-faces
- ;; custom-set-faces was added by Custom.
- ;; If you edit it by hand, you could mess it up, so be careful.
- ;; Your init file should contain only one such instance.
- ;; If there is more than one, they won't work right.
- )
