@@ -1,5 +1,3 @@
-(add-hook 'go-mode-hook 'eglot-ensure)
-
 (defun my-go-mode-hook ()
   (add-hook 'before-save-hook 'gofmt-before-save) ; gofmt before every save
   (setq gofmt-command "goimports")                ; gofmt uses invokes goimports

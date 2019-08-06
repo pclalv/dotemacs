@@ -15,7 +15,9 @@
       (and root (cons 'transient root))))
   (add-to-list 'project-find-functions 'my-projectile-project-find-function)
   (add-to-list 'eglot-server-programs '(go-mode . ("/Users/paulalvarez/code/go/bin/gopls")))
-  :hook (ruby-mode . eglot-ensure))
+  :hook
+  (ruby-mode . eglot-ensure)
+  (go-mode . eglot-ensure))
 
 ;; this didn't work; cryptic error message
 ;; (add-to-list 'eglot-server-programs '(clojure-mode . ("/Users/paulalvarez/bin/clojure-lsp")))
