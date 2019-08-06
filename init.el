@@ -32,7 +32,8 @@
   :straight t)
 
 (use-package json-mode
-  :straight t)
+  :straight t
+  :mode ("\\.json\\'"))
 
 (use-package markdown-mode
   :straight t)
@@ -47,7 +48,13 @@
   :straight t)
 
 (use-package yaml-mode
-  :straight t)
+  :straight
+  :mode ("\\.yml\\'")
+  :config
+  (add-hook 'yaml-mode-hook
+            (lambda ()
+              (define-key yaml-mode-map "\C-m" 'newline-and-indent)))
+  (add-hook 'yaml-mode-hook 'highlight-indentation-mode))
 
 ;; completion
 (use-package yasnippet
@@ -72,6 +79,9 @@
   :straight t
   :mode ("\\.dsl\\'"))
 
+(use-package markdown-mode
+  :mode ("\\.markdown\\'" "\\.md\\'"))
+
 ;; On OS X, an Emacs instance started from the graphical user
 ;; interface will have a different environment than a shell in a
 ;; terminal window, because OS X does not run a shell during the
@@ -91,6 +101,28 @@
 
 (use-package terraform-mode
   :straight t)
+
+(use-package eglot
+  :straight t
+  :after projectile
+  :bind (:map eglot-mode-map
+              ("C-c e a" . eglot-code-actions)
+              ("C-c e f" . eglot-format)
+              ("C-c e h" . eglot-help-at-point)
+              ("C-c e r" . eglot-rename)
+              ("C-c h" . eglot-help-at-point))
+  :config
+  ;; Bridge projectile and project together so packages that depend on
+  ;; project like eglot work
+  ;; https://github.com/joaotavora/eglot/issues/129#issuecomment-444130367
+  (defun my-projectile-project-find-function (dir)
+    (let ((root (projectile-project-root dir)))
+      (and root (cons 'transient root))))
+  (add-to-list 'project-find-functions 'my-projectile-project-find-function)
+  (add-to-list 'eglot-server-programs '(go-mode . ("/Users/paulalvarez/code/go/bin/gopls")))
+  :hook
+  (ruby-mode . eglot-ensure)
+  (go-mode . eglot-ensure))
 
 ;; Place downloaded elisp files in ~/.emacs.d/vendor. You'll then be able
 ;; to load them.
@@ -115,15 +147,9 @@
 (load "setup-dsssl-mode.el")
 (load "setup-eglot.el")
 (load "setup-go.el")
-(load "setup-js.el")
-(load "setup-groovy.el")
 (load "setup-lisps.el")
-(load "setup-markdown.el")
-(load "setup-makefile.el")
-(load "setup-magit.el")
 (load "setup-ocaml.el")
 (load "setup-org.el")
-(load "setup-projectile.el")
 (load "setup-projectile-rails.el")
 (load "setup-ruby.el")
 (load "setup-shell.el")
