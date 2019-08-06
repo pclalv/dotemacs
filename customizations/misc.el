@@ -24,6 +24,8 @@
 (global-unset-key (kbd "s-t")) ; ns-popup-font-panel
 (global-unset-key (kbd "C-z")) ; suspend-frame (minimize/maximize frame)
 (global-unset-key (kbd "C-<tab>"))
+(global-unset-key (kbd "C-x f"))
+
 
 (setq backup-directory-alist
       '(("." . "/tmp/emacs-backups")))
