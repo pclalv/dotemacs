@@ -19,25 +19,6 @@
 (straight-use-package 'use-package)
 (setq straight-use-package-by-default t)
 
-(use-package paredit
-  :straight t)
-
-(use-package yasnippet
-  :straight t)
-
-;; On OS X, an Emacs instance started from the graphical user
-;; interface will have a different environment than a shell in a
-;; terminal window, because OS X does not run a shell during the
-;; login. Obviously this will lead to unexpected results when
-;; calling external utilities like make from Emacs.
-;; This library works around this problem by copying important
-;; environment variables from the user's shell.
-;; https://github.com/purcell/exec-path-from-shell
-(use-package exec-path-from-shell
-  :straight t
-  :if (eq system-type 'darwin)
-  :demand t)
-
 (use-package color-theme-sanityinc-tomorrow
   :straight t
   :demand t)
@@ -63,6 +44,49 @@
   :hook
   (ruby-mode . eglot-ensure)
   (go-mode . eglot-ensure))
+
+(use-package electric
+  :hook (ruby-mode . electric-pair-mode))
+
+;; On OS X, an Emacs instance started from the graphical user
+;; interface will have a different environment than a shell in a
+;; terminal window, because OS X does not run a shell during the
+;; login. Obviously this will lead to unexpected results when
+;; calling external utilities like make from Emacs.
+;; This library works around this problem by copying important
+;; environment variables from the user's shell.
+;; https://github.com/purcell/exec-path-from-shell
+(use-package exec-path-from-shell
+  :straight t
+  :if (eq system-type 'darwin)
+  :demand t)
+
+(use-package hideshow
+  :after (ruby-mode)
+  :bind
+  ;; hideshow bindings suck, but this doesn't work
+  (("C-c h" . hs-hide-block)
+   ("C-c s" . hs-show-block))
+  :config
+  (add-to-list 'hs-special-modes-alist
+               `(ruby-mode
+                 ,(rx (or "def" "class" "module" "do" "{" "[")) ; Block start
+                 ,(rx (or "}" "]" "end"))                       ; Block end
+                 ,(rx (or "#" "=begin"))                        ; Comment start
+                 ruby-forward-sexp nil))
+  :hook (ruby-mode . (lambda () (hs-minor-mode))))
+
+(use-package highlight-indentation
+  :straight t
+  :hook (ruby-mode . highlight-indentation-mode))
+
+(use-package paredit
+  :straight t)
+
+(use-package yasnippet
+  :straight t)
+
+;; languages
 
 ;;;;;;;;;;;;;
 ;; clojure ;;
