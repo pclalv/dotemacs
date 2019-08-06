@@ -1,8 +1,6 @@
 (setq-default indent-tabs-mode nil
               tab-width 4)
 
-(electric-pair-mode 1)
-
 (defun my-find-file-hook ()
   "Buffer local settings for buffers that are actually files."
   (setq indicate-empty-lines t
@@ -58,8 +56,6 @@
 (ad-activate 'split-window-below)
 
 (set-face-attribute 'linum nil :height 100)
-
-(add-to-list 'load-path "~/.emacs.d/elpa")
 
 (use-package yasnippet
   :demand t
