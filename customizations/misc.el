@@ -23,6 +23,7 @@
 ;; Disable commonly unintended key presses.
 (global-unset-key (kbd "s-t")) ; ns-popup-font-panel
 (global-unset-key (kbd "C-z")) ; suspend-frame (minimize/maximize frame)
+(global-unset-key (kbd "C-<tab>"))
 
 (setq backup-directory-alist
       '(("." . "/tmp/emacs-backups")))
@@ -46,6 +47,3 @@
 ;; for mitsuhara's port
 (setq mac-option-modifier 'meta)
 (setq mac-command-modifier 'super)
-
-;; disable this useless binding
-(global-set-key (kbd "C-<tab>") nil)
