@@ -80,7 +80,7 @@
   :straight t
   :hook (ruby-mode . highlight-indentation-mode))
 
-(use-package paredit
+(use-package parinfer
   :straight t)
 
 (use-package yasnippet
