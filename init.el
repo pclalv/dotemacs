@@ -2,6 +2,13 @@
 ;; https://glyph.twistedmatrix.com/2015/11/editor-malware.html#fnref:4
 (setq tls-checktrust t)
 
+;; disable things.
+(rassq-delete-all 'dsssl-mode auto-mode-alist)
+(global-unset-key (kbd "s-t")) ; ns-popup-font-panel
+(global-unset-key (kbd "C-z")) ; suspend-frame (minimize/maximize frame)
+(global-unset-key (kbd "C-<tab>"))
+(global-unset-key (kbd "C-x f"))
+
 ;; boilerplate from https://github.com/raxod502/straight.el/blob/develop/README.md#getting-started
 (defvar bootstrap-version)
 (let ((bootstrap-file

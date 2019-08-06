@@ -18,12 +18,7 @@
 
 (global-set-key (kbd "C-x C-r") 'rename-file-and-buffer)
 
-;; Disable commonly unintended key presses.
-(global-unset-key (kbd "s-t")) ; ns-popup-font-panel
-(global-unset-key (kbd "C-z")) ; suspend-frame (minimize/maximize frame)
-(global-unset-key (kbd "C-<tab>"))
-(global-unset-key (kbd "C-x f"))
-
+(add-to-list 'backup-directory-alist '("." . "~/.emacs.d/backups"))
 
 (setq backup-directory-alist
       '(("." . "/tmp/emacs-backups")))
