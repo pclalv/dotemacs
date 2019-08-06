@@ -123,6 +123,14 @@
   (lisp-mode . parinfer-mode)
   (clojure-mode . parinfer-mode))
 
+;; just for package-list-packages
+(use-package package
+  :config
+  (add-to-list 'package-archives
+               '("melpa-stable" . "https://stable.melpa.org/packages/") t)
+  (add-to-list 'package-archives
+               '("melpa" . "https://melpa.org/packages/") t))
+
 (use-package zoom-window
   :straight t
   :config
