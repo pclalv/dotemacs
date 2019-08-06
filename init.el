@@ -193,7 +193,6 @@
 (load "setup-shell.el")
 (load "setup-smalltalk.el")
 (load "setup-yaml.el")
-(load "setup-wanderlust.el")
 
 (setq inhibit-startup-screen t)
 
