@@ -119,7 +119,16 @@
 ;;;;;;;;;;;;
 
 (use-package go-mode
-  :straight t)
+  :straight t
+  :config
+  (defun my-go-mode-hook ()
+    (add-hook 'before-save-hook 'gofmt-before-save) ; gofmt before every save
+    (setq gofmt-command "goimports")                ; gofmt uses invokes goimports
+    (if (not (string-match "go" compile-command))   ; set compile command default
+        (set (make-local-variable 'compile-command)
+             "go build -v && go test -v && go vet")))
+
+  (add-hook 'go-mode-hook 'my-go-mode-hook))
 
 (use-package go-errcheck
   :straight t)
@@ -175,32 +184,21 @@
 ;;
 (add-to-list 'load-path "~/.emacs.d/vendor")
 
-;;;;
-;; Customization
-;;;;
-
-;; Add a directory to our load path so that when you `load` things
-;; below, Emacs knows where to look for the corresponding file.
 (add-to-list 'load-path "~/.emacs.d/customizations")
 
 (load "navigation.el")
 (load "editing.el")
 (load "misc.el")
 
-;; Langauage-specific
 (load "setup-c.el")
 (load "setup-clojure.el")
 (load "setup-dsssl-mode.el")
-(load "setup-eglot.el")
-(load "setup-go.el")
 (load "setup-lisps.el")
 (load "setup-ocaml.el")
 (load "setup-org.el")
 (load "setup-projectile-rails.el")
-(load "setup-ruby.el")
 (load "setup-shell.el")
 (load "setup-smalltalk.el")
-(load "setup-yaml.el")
 
 (custom-set-variables
  ;; custom-set-variables was added by Custom.
