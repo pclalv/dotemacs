@@ -1,9 +1,6 @@
 (setq-default indent-tabs-mode nil
               tab-width 4)
 
-(global-set-key (kbd "C-w") 'backward-kill-word)
-(global-set-key (kbd "C-x C-k") 'kill-region)
-
 (electric-pair-mode 1)
 
 (defun my-find-file-hook ()

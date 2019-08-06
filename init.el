@@ -16,6 +16,30 @@
 (prefer-coding-system 'utf-8)
 (set-language-environment "UTF-8")
 
+;; keybinding
+(global-set-key (kbd "C-c P l") '(load-file "~/.emacs.d/init.el"))
+(global-set-key (kbd "C-w") 'backward-kill-word)
+(global-set-key (kbd "C-x C-k") 'kill-region)
+(global-set-key (kbd "s-=") 'text-scale-increase)
+(global-set-key (kbd "s--") 'text-scale-decrease)
+
+(defun rename-file-and-buffer ()
+  "Rename the current buffer and file it is visiting."
+  (interactive)
+  (let ((filename (buffer-file-name)))
+    (if (not (and filename (file-exists-p filename)))
+        (message "Buffer is not visiting a file!")
+      (let ((new-name (read-file-name "New name: " filename)))
+        (cond
+         ((vc-backend filename) (vc-rename-file filename new-name))
+         (t
+          (rename-file filename new-name t)
+          (set-visited-file-name new-name t t)))))))
+
+(global-set-key (kbd "C-x C-r") 'rename-file-and-buffer)
+
+;; packages
+
 ;; boilerplate from https://github.com/raxod502/straight.el/blob/develop/README.md#getting-started
 (defvar bootstrap-version)
 (let ((bootstrap-file
