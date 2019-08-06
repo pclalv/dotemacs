@@ -124,14 +124,8 @@
 ;; environment variables from the user's shell.
 ;; https://github.com/purcell/exec-path-from-shell
 (use-package exec-path-from-shell
-   :if (eq system-type 'darwin)
-   :demand t
-   :config
-   (add-to-list 'my-packages 'exec-path-from-shell))
-
-(dolist (p my-packages)
-  (when (not (package-installed-p p))
-    (package-install p)))
+  :if (eq system-type 'darwin)
+  :demand t)
 
 ;; Place downloaded elisp files in ~/.emacs.d/vendor. You'll then be able
 ;; to load them.
