@@ -148,8 +148,7 @@ point reaches the beginning or end of the buffer, stop there."
               ("C-c e a" . eglot-code-actions)
               ("C-c e f" . eglot-format)
               ("C-c e h" . eglot-help-at-point)
-              ("C-c e r" . eglot-rename)
-              ("C-c h" . eglot-help-at-point))
+              ("C-c e r" . eglot-rename))
   :config
   ;; Bridge projectile and project together so packages that depend on
   ;; project like eglot work
