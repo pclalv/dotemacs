@@ -35,6 +35,7 @@ point reaches the beginning or end of the buffer, stop there."
                 'smarter-move-beginning-of-line)
 
 (use-package projectile
+  :straight t
   :demand t
   :bind-keymap
   ("C-c p" . projectile-command-map)
@@ -46,6 +47,7 @@ point reaches the beginning or end of the buffer, stop there."
   (add-to-list 'projectile-globally-ignored-directories "vendor"))
 
 (use-package helm
+  :straight t
   :demand t
   :config
   (require 'helm-config)
@@ -64,10 +66,11 @@ point reaches the beginning or end of the buffer, stop there."
    :map helm-map
    ("<tab>" . helm-execute-persistent-action) ;; rebind tab to run persistent action
    ("C-i" . helm-execute-persistent-action) ;; make TAB works in terminal
-   ("C-z" . helm-select-action) ;; list actions using C-z
-   ))
+   ("C-z" . helm-select-action))) ;; list actions using C-z
+   
 
 (use-package helm-projectile
+  :straight t
   :demand t
   :requires (helm projectile)
   :bind (:map helm-command-map ("s" . helm-ag-this-file))
@@ -75,7 +78,12 @@ point reaches the beginning or end of the buffer, stop there."
   (helm-projectile-on)
   (setq projectile-completion-system 'helm))
 
+(use-package helm-rg
+  :straight t
+  :requires helm)
+
 (use-package helm-ag
+  :straight t
   :requires helm
   :config
   (add-to-list 'grep-find-ignored-directories "log")
@@ -85,8 +93,9 @@ point reaches the beginning or end of the buffer, stop there."
   (add-to-list 'grep-find-ignored-directories "node_modules"))
 
 (use-package zoom-window
+  :straight t
   :config
-  (custom-set-variables '(zoom-window-mode-line-color "DarkGreen"))
+  (setq zoom-window-mode-line-color "DarkGreen")
   :bind ("C-x C-z" . zoom-window-zoom))
 
 ;;; fix issue where tramp hangs indefinitely
@@ -95,6 +104,7 @@ point reaches the beginning or end of the buffer, stop there."
 ;; (add-hook 'prog-mode-hook 'projectile-mode)
 
 (use-package magit
+  :straight t
   :config
   ;; per https://magit.vc/manual/magit/Performance.html#Performance
   (setq vc-handled-backends nil))

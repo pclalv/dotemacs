@@ -19,101 +19,58 @@
 (straight-use-package 'use-package)
 (setq straight-use-package-by-default t)
 
+(use-package clojure-mode
+  :straight t)
 
-;; The packages you want installed. You can also install these
-;; manually with M-x package-install
-;; Add in your own as you wish:
-(defvar my-packages
-  '(;; makes handling lisp expressions much, much easier
-    ;; Cheatsheet: http://www.emacswiki.org/emacs/PareditCheatsheet
-    paredit
+(use-package clojure-mode-extra-font-locking
+  :straight t)
 
-    ;; key bindings and code colorization for Clojure
-    ;; https://github.com/clojure-emacs/clojure-mode
-    clojure-mode
+(use-package cider
+  :straight t)
 
-    ;; extra syntax highlighting for clojure
-    clojure-mode-extra-font-locking
+(use-package paredit
+  :straight t)
 
-    ;; integration with a Clojure REPL
-    ;; https://github.com/clojure-emacs/cider
-    cider
+(use-package json-mode
+  :straight t)
 
-    ;; Enhances M-x to allow easier execution of commands. Provides
-    ;; a filterable list of possible commands in the minibuffer
-    ;; http://www.emacswiki.org/emacs/Smex
-    smex
+(use-package markdown-mode
+  :straight t)
 
-    ;; project navigation
-    projectile
+(use-package go-mode
+  :straight t)
 
-    ;; edit html tags like sexps
-    tagedit
+(use-package go-errcheck
+  :straight t)
 
-    ;;js2
-    js2-mode
+(use-package flymake-go
+  :straight t)
 
-    ;;html
-    web-mode
+(use-package yaml-mode
+  :straight t)
 
-    ;; ruby
-    ;; modes
-    enh-ruby-mode
-    rspec-mode
-    projectile-rails
+;; completion
+(use-package yasnippet
+  :straight t)
 
-    ;; linting
-    rubocop
+;; dockerfile
+(use-package dockerfile-mode
+  :straight t)
 
-    bundler
+;; haskell
+(use-package haskell-mode
+  :straight t)
 
-    ;; json
-    json-mode
+;; elixir
+(use-package elixir-mode
+  :straight t)
+(use-package alchemist
+  :straight t)
 
-    ;; markdown
-    markdown-mode
-
-    ;; helm
-    helm
-    helm-ag
-    helm-rg
-    helm-projectile
-
-    ;; go
-    go-mode
-    go-errcheck
-    flymake-go
-
-    ;; yaml-mode
-    yaml-mode
-
-    ;; completion
-    yasnippet
-
-    ;; dockerfile
-    dockerfile-mode
-
-    ;; haskell
-    haskell-mode
-
-    ;; elixir
-    elixir-mode
-    alchemist
-
-    ;; groovy
-    groovy-mode
-
-    ace-window
-    avy
-    company
-    highlight-indentation
-    magit
-    zoom-window
-
-    merlin
-    tuareg
-
-    eglot))
+;; groovy
+(use-package groovy-mode
+  :straight t
+  :mode ("\\.dsl\\'"))
 
 ;; On OS X, an Emacs instance started from the graphical user
 ;; interface will have a different environment than a shell in a
@@ -124,8 +81,16 @@
 ;; environment variables from the user's shell.
 ;; https://github.com/purcell/exec-path-from-shell
 (use-package exec-path-from-shell
+  :straight t
   :if (eq system-type 'darwin)
   :demand t)
+
+(use-package color-theme-sanityinc-tomorrow
+  :straight t
+  :demand t)
+
+(use-package terraform-mode
+  :straight t)
 
 ;; Place downloaded elisp files in ~/.emacs.d/vendor. You'll then be able
 ;; to load them.

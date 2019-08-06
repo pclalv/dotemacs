@@ -1,4 +1,5 @@
 (use-package eglot
+  :straight t
   :after projectile
   :bind (:map eglot-mode-map
               ("C-c e a" . eglot-code-actions)
