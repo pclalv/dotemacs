@@ -62,10 +62,7 @@
 
 (set-face-attribute 'linum nil :height 100)
 
-(add-to-list 'custom-theme-load-path "~/.emacs.d/elpa")
 (add-to-list 'load-path "~/.emacs.d/elpa")
-
-(load-theme 'sanityinc-tomorrow-night t)
 
 (use-package yasnippet
   :demand t

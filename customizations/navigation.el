@@ -1,13 +1,3 @@
-(use-package ace-window
-  :bind ("C-x o" . ace-window))
-
-(use-package avy
-  :bind
-  (("C-'" . avy-goto-char)
-   ("C-:" . avy-goto-char-2)
-   ("M-g w" . avy-goto-word-1)
-   ("M-g e" . avy-goto-word-0)))
-
 ;; Changing behavior of C-a
 (defun smarter-move-beginning-of-line (arg)
   "Move point back to indentation of beginning of line.

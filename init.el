@@ -19,9 +19,21 @@
 (straight-use-package 'use-package)
 (setq straight-use-package-by-default t)
 
+(use-package ace-window
+  :bind ("C-x o" . ace-window))
+
+(use-package avy
+  :bind
+  (("C-'" . avy-goto-char)
+   ("C-:" . avy-goto-char-2)
+   ("M-g w" . avy-goto-word-1)
+   ("M-g e" . avy-goto-word-0)))
+
 (use-package color-theme-sanityinc-tomorrow
   :straight t
-  :demand t)
+  :demand t
+  :config
+  (load-theme 'sanityinc-tomorrow-night t))
 
 (use-package eglot
   :straight t
@@ -80,6 +92,19 @@
   :straight t
   :hook (ruby-mode . highlight-indentation-mode))
 
+(use-package magit
+  :straight t
+  :bind ("C-x g" . magit-status)
+  :config
+  ;; per https://magit.vc/manual/magit/Performance.html#Performance
+  (setq vc-handled-backends nil)
+  (remove-hook 'magit-refs-sections-hook 'magit-insert-tags)
+
+  (defun magit-open (&optional args)
+    "Open the current file in github."
+    (interactive (list (magit-commit-arguments)))
+    (magit-run-git "open" (magit-file-relative-name))))
+
 (use-package parinfer
   :straight t
   :bind (:map parinfer-mode-map
@@ -97,9 +122,12 @@
   (scheme-mode . parinfer-mode)
   (lisp-mode . parinfer-mode)
   (clojure-mode . parinfer-mode))
-  
-(use-package yasnippet
-  :straight t)
+
+(use-package zoom-window
+  :straight t
+  :config
+  (setq zoom-window-mode-line-color "DarkGreen")
+  :bind ("C-x C-z" . zoom-window-zoom))
 
 ;; languages
 
