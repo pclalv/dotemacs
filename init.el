@@ -81,8 +81,23 @@
   :hook (ruby-mode . highlight-indentation-mode))
 
 (use-package parinfer
-  :straight t)
-
+  :straight t
+  :bind (:map parinfer-mode-map
+              ("C-," . parinfer-toggle-mode))
+  :init
+  (progn
+    (setq parinfer-extensions
+          '(defaults       ; should be included.
+            pretty-parens  ; different paren styles for different modes.
+            smart-tab      ; C-b & C-f jump positions and smart shift with tab & S-tab.
+            smart-yank)))  ; Yank behavior depend on mode.
+  :hook
+  (emacs-lisp-mode . parinfer-mode)
+  (common-lisp-mode . parinfer-mode)
+  (scheme-mode . parinfer-mode)
+  (lisp-mode . parinfer-mode)
+  (clojure-mode . parinfer-mode))
+  
 (use-package yasnippet
   :straight t)
 
@@ -193,7 +208,6 @@
 (load "setup-c.el")
 (load "setup-clojure.el")
 (load "setup-dsssl-mode.el")
-(load "setup-lisps.el")
 (load "setup-ocaml.el")
 (load "setup-org.el")
 (load "setup-projectile-rails.el")
