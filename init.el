@@ -146,14 +146,8 @@
 ;; below, Emacs knows where to look for the corresponding file.
 (add-to-list 'load-path "~/.emacs.d/customizations")
 
-;; These customizationps make it easier for you to navigate files,
-;; switch buffers, and choose options from the minibuffer.
 (load "navigation.el")
-
-;; These customizations make editing a bit nicer.
 (load "editing.el")
-
-;; Hard-to-categorize customizations
 (load "misc.el")
 
 ;; Langauage-specific
