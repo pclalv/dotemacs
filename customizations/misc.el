@@ -1,5 +1,3 @@
-(require 'tramp)
-
 (global-set-key (kbd "s-=") 'text-scale-increase)
 (global-set-key (kbd "s--") 'text-scale-decrease)
 

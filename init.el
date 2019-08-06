@@ -6,10 +6,6 @@
 
 (add-to-list 'package-archives
              '("melpa-stable" . "https://stable.melpa.org/packages/") t)
-;; (add-to-list 'package-archives
-;;              '("marmalade" . "http://marmalade-repo.org/packages/") t)
-;; (add-to-list 'package-archives
-;;              '("tromey" . "http://tromey.com/elpa/") t)
 (add-to-list 'package-archives
              '("melpa" . "https://melpa.org/packages/") t)
 
@@ -118,7 +114,6 @@
     tuareg
 
     eglot))
-    
 
 ;; On OS X, an Emacs instance started from the graphical user
 ;; interface will have a different environment than a shell in a
@@ -151,17 +146,9 @@
 ;; below, Emacs knows where to look for the corresponding file.
 (add-to-list 'load-path "~/.emacs.d/customizations")
 
-;; Sets up exec-path-from-shell so that Emacs will use the correct
-;; environment variables
-;; (load "shell-integration.el")
-
 ;; These customizationps make it easier for you to navigate files,
 ;; switch buffers, and choose options from the minibuffer.
 (load "navigation.el")
-
-;; These customizations change the way emacs looks and disable/enable
-;; some user interface elements
-(load "ui.el")
 
 ;; These customizations make editing a bit nicer.
 (load "editing.el")
@@ -169,20 +156,13 @@
 ;; Hard-to-categorize customizations
 (load "misc.el")
 
-;; For editing lisps
-;; (load "elisp-editing.el")
-
 ;; Langauage-specific
 (load "setup-c.el")
 (load "setup-clojure.el")
 (load "setup-dsssl-mode.el")
 (load "setup-eglot.el")
-;; (load "setup-elixir.el")
 (load "setup-go.el")
-;; (load "setup-html.el")
 (load "setup-js.el")
-;; (load "setup-json.el")
-;; (load "setup-haskell.el")
 (load "setup-groovy.el")
 (load "setup-lisps.el")
 (load "setup-markdown.el")
@@ -210,9 +190,9 @@
    (quote
     (use-package rbenv lsp-mode helm-go-package terraform-mode eglot utop merlin tuareg clojure-mode magit nhexl-mode avy alchemist elixir-mode highlight-indentation haskell-mode zoom-window tomatinho bundler ac-js2 helm-tramp ycmd yasnippet yaml-mode web-mode tagedit smex rubocop rspec-mode projectile-rails parinfer paredit markdown-mode json-mode helm-projectile helm-ag groovy-mode go-mode go-errcheck flymake-go exec-path-from-shell enh-ruby-mode dockerfile-mode company color-theme-sanityinc-tomorrow clojure-mode-extra-font-locking cider auto-indent-mode ace-window)))
  '(zoom-window-mode-line-color "DarkGreen"))
-(custom-set-faces)
+(custom-set-faces
  ;; custom-set-faces was added by Custom.
  ;; If you edit it by hand, you could mess it up, so be careful.
  ;; Your init file should contain only one such instance.
  ;; If there is more than one, they won't work right.
- 
+ )
