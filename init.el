@@ -9,25 +9,23 @@
 (global-unset-key (kbd "C-x f"))
 (rassq-delete-all 'dsssl-mode auto-mode-alist)
 (setq inhibit-startup-screen t)
-;; Don't show native toolbar.
 (when (fboundp 'tool-bar-mode)
-  (tool-bar-mode -1))
-;; Turn off the menu bar at the top of each frame because it's distracting
-(menu-bar-mode -1)
-;; Don't show native OS scroll bars for buffers because they're redundant
+  (tool-bar-mode -1)) ; Don't show native toolbar.
+(menu-bar-mode -1) ; Turn off the menu bar at the top of each frame
+                   ; because it's distracting
 (when (fboundp 'scroll-bar-mode)
-  (scroll-bar-mode -1))
-;; no bell
-(setq ring-bell-function 'ignore)
+  (scroll-bar-mode -1)) ; Don't show native OS scroll bars for buffers
+                        ; because they're redundant
+(setq ring-bell-function 'ignore) ; no bell
 
-;; default to utf-8 everywhere
+;; utf-8 everywhere
 (set-terminal-coding-system 'utf-8)
 (set-keyboard-coding-system 'utf-8)
 (set-selection-coding-system 'utf-8)
 (prefer-coding-system 'utf-8)
 (set-language-environment "UTF-8")
 
-;; keybinding
+;; keybindings
 (global-set-key (kbd "C-c P l") '(load-file "~/.emacs.d/init.el"))
 (global-set-key (kbd "C-w") 'backward-kill-word)
 (global-set-key (kbd "C-x C-k") 'kill-region)
