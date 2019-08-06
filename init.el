@@ -19,68 +19,11 @@
 (straight-use-package 'use-package)
 (setq straight-use-package-by-default t)
 
-(use-package clojure-mode
-  :straight t)
-
-(use-package clojure-mode-extra-font-locking
-  :straight t)
-
-(use-package cider
-  :straight t)
-
 (use-package paredit
   :straight t)
 
-(use-package json-mode
-  :straight t
-  :mode ("\\.json\\'"))
-
-(use-package markdown-mode
-  :straight t)
-
-(use-package go-mode
-  :straight t)
-
-(use-package go-errcheck
-  :straight t)
-
-(use-package flymake-go
-  :straight t)
-
-(use-package yaml-mode
-  :straight
-  :mode ("\\.yml\\'")
-  :config
-  (add-hook 'yaml-mode-hook
-            (lambda ()
-              (define-key yaml-mode-map "\C-m" 'newline-and-indent)))
-  (add-hook 'yaml-mode-hook 'highlight-indentation-mode))
-
-;; completion
 (use-package yasnippet
   :straight t)
-
-;; dockerfile
-(use-package dockerfile-mode
-  :straight t)
-
-;; haskell
-(use-package haskell-mode
-  :straight t)
-
-;; elixir
-(use-package elixir-mode
-  :straight t)
-(use-package alchemist
-  :straight t)
-
-;; groovy
-(use-package groovy-mode
-  :straight t
-  :mode ("\\.dsl\\'"))
-
-(use-package markdown-mode
-  :mode ("\\.markdown\\'" "\\.md\\'"))
 
 ;; On OS X, an Emacs instance started from the graphical user
 ;; interface will have a different environment than a shell in a
@@ -98,9 +41,6 @@
 (use-package color-theme-sanityinc-tomorrow
   :straight t
   :demand t)
-
-(use-package terraform-mode
-  :straight t)
 
 (use-package eglot
   :straight t
@@ -123,6 +63,75 @@
   :hook
   (ruby-mode . eglot-ensure)
   (go-mode . eglot-ensure))
+
+;;;;;;;;;;;;;
+;; clojure ;;
+;;;;;;;;;;;;;
+
+(use-package clojure-mode
+  :straight t)
+
+(use-package clojure-mode-extra-font-locking
+  :straight t)
+
+(use-package cider
+  :straight t)
+
+(use-package dockerfile-mode
+  :straight t)
+
+;;;;;;;;;;;;
+;; elixir ;;
+;;;;;;;;;;;;
+
+(use-package elixir-mode
+  :straight t)
+
+(use-package alchemist
+  :straight t)
+
+;;;;;;;;;;;;
+;; golang ;;
+;;;;;;;;;;;;
+
+(use-package go-mode
+  :straight t)
+
+(use-package go-errcheck
+  :straight t)
+
+(use-package flymake-go
+  :straight t)
+
+;;;;;;;;;;;;
+;; groovy ;;
+;;;;;;;;;;;;
+
+(use-package groovy-mode
+  :straight t
+  :mode ("\\.dsl\\'"))
+
+(use-package haskell-mode
+  :straight t)
+
+(use-package json-mode
+  :straight t
+  :mode ("\\.json\\'"))
+
+(use-package markdown-mode
+  :mode ("\\.markdown\\'" "\\.md\\'"))
+
+(use-package terraform-mode
+  :straight t)
+
+(use-package yaml-mode
+  :straight
+  :mode ("\\.yml\\'")
+  :config
+  (add-hook 'yaml-mode-hook
+            (lambda ()
+              (define-key yaml-mode-map "\C-m" 'newline-and-indent)))
+  (add-hook 'yaml-mode-hook 'highlight-indentation-mode))
 
 ;; Place downloaded elisp files in ~/.emacs.d/vendor. You'll then be able
 ;; to load them.
