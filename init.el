@@ -222,9 +222,6 @@
               (define-key yaml-mode-map "\C-m" 'newline-and-indent)))
   (add-hook 'yaml-mode-hook 'highlight-indentation-mode))
 
-;; Place downloaded elisp files in ~/.emacs.d/vendor. You'll then be able
-;; to load them.
-;;
 (add-to-list 'load-path "~/.emacs.d/vendor")
 
 (add-to-list 'load-path "~/.emacs.d/customizations")
