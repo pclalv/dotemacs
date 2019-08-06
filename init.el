@@ -9,6 +9,13 @@
 (global-unset-key (kbd "C-<tab>"))
 (global-unset-key (kbd "C-x f"))
 
+;; default to utf-8 everywhere
+(set-terminal-coding-system 'utf-8)
+(set-keyboard-coding-system 'utf-8)
+(set-selection-coding-system 'utf-8)
+(prefer-coding-system 'utf-8)
+(set-language-environment "UTF-8")
+
 ;; boilerplate from https://github.com/raxod502/straight.el/blob/develop/README.md#getting-started
 (defvar bootstrap-version)
 (let ((bootstrap-file
