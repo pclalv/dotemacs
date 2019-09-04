@@ -221,9 +221,9 @@ point reaches the beginning or end of the buffer, stop there."
   (progn
     (setq parinfer-extensions
           '(defaults       ; should be included.
-            pretty-parens  ; different paren styles for different modes.
-            smart-tab      ; C-b & C-f jump positions and smart shift with tab & S-tab.
-            smart-yank)))  ; Yank behavior depend on mode.
+             pretty-parens  ; different paren styles for different modes.
+             smart-tab      ; C-b & C-f jump positions and smart shift with tab & S-tab.
+             smart-yank)))  ; Yank behavior depend on mode.
   :hook
   (emacs-lisp-mode . parinfer-mode)
   (common-lisp-mode . parinfer-mode)
