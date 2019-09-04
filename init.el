@@ -318,7 +318,9 @@ point reaches the beginning or end of the buffer, stop there."
 ;;;;;;;;;;
 
 (use-package ruby-mode
-  :straight t)
+  :straight t
+  :config
+  (setq ruby-use-smie nil))
 
 (use-package inf-ruby
   :straight t)
@@ -359,3 +361,4 @@ point reaches the beginning or end of the buffer, stop there."
  ;; If there is more than one, they won't work right.
  '(inf-ruby-default-implementation "pry")
  '(magit-log-section-arguments (quote ("--decorate" "-n256")))
+ '(ruby-deep-indent-paren nil)
