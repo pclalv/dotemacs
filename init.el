@@ -163,7 +163,10 @@ point reaches the beginning or end of the buffer, stop there."
   (go-mode . eglot-ensure))
 
 (use-package electric
-  :hook (ruby-mode . electric-pair-mode))
+  :hook
+  (ruby-mode . electric-pair-mode)
+  (c-mode . electric-pair-mode)
+  (cider-repl-mode . electric-pair-mode))
 
 ;; On OS X, an Emacs instance started from the graphical user
 ;; interface will have a different environment than a shell in a
@@ -243,12 +246,6 @@ point reaches the beginning or end of the buffer, stop there."
   :bind ("C-x C-z" . zoom-window-zoom))
 
 ;; languages
-
-;;;;;;;
-;; c ;;
-;;;;;;;
-
-(add-hook 'c-mode-hook 'electric-pair-mode)
 
 ;;;;;;;;;;;;;
 ;; clojure ;;
