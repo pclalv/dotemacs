@@ -54,4 +54,5 @@
   (add-to-list 'grep-find-ignored-directories "tmp")
   (add-to-list 'grep-find-ignored-directories "vendor")
   (add-to-list 'grep-find-ignored-directories "coverage")
+  (add-to-list 'grep-find-ignored-directories "_build")
   (add-to-list 'grep-find-ignored-directories "node_modules"))
