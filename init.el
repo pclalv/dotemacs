@@ -340,6 +340,15 @@ point reaches the beginning or end of the buffer, stop there."
               (define-key yaml-mode-map "\C-m" 'newline-and-indent)))
   (add-hook 'yaml-mode-hook 'highlight-indentation-mode))
 
+(use-package sh-script
+  ;; Configuration of the built-in sh-mode
+  :mode ("\\.bats\\'" . shell-script-mode)
+  :config
+  (setq sh-basic-offset 2
+	sh-indentation 2))
+;; who knows when bash-language-server will work
+;; (add-hook 'sh-mode-hook 'eglot-ensure))
+
 (add-to-list 'load-path "~/.emacs.d/vendor")
 
 (add-to-list 'load-path "~/.emacs.d/customizations")
@@ -351,7 +360,6 @@ point reaches the beginning or end of the buffer, stop there."
 (load "setup-ocaml.el")
 (load "setup-org.el")
 (load "setup-projectile-rails.el")
-(load "setup-shell.el")
 (load "setup-smalltalk.el")
 
 (custom-set-variables
