@@ -229,7 +229,8 @@ point reaches the beginning or end of the buffer, stop there."
   (common-lisp-mode . parinfer-mode)
   (scheme-mode . parinfer-mode)
   (lisp-mode . parinfer-mode)
-  (clojure-mode . parinfer-mode))
+  (clojure-mode . parinfer-mode)
+  (clojurescript-mode . parinfer-mode))
 
 ;; just for package-list-packages
 (use-package package
