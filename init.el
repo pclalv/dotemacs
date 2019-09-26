@@ -123,12 +123,13 @@ point reaches the beginning or end of the buffer, stop there."
   (load bootstrap-file nil 'nomessage))
 
 (straight-use-package 'use-package)
-(setq straight-use-package-by-default t)
 
 (use-package ace-window
+  :straight t
   :bind ("C-x o" . ace-window))
 
 (use-package avy
+  :straight t
   :bind
   (("C-'" . avy-goto-char)
    ("C-:" . avy-goto-char-2)
@@ -234,6 +235,7 @@ point reaches the beginning or end of the buffer, stop there."
 
 ;; just for package-list-packages
 (use-package package
+  :straight t
   :config
   (add-to-list 'package-archives
                '("melpa-stable" . "https://stable.melpa.org/packages/") t)
@@ -312,6 +314,7 @@ point reaches the beginning or end of the buffer, stop there."
   :mode ("\\.json\\'"))
 
 (use-package markdown-mode
+  :straight t
   :mode ("\\.markdown\\'" "\\.md\\'"))
 
 ;;;;;;;;;;
@@ -333,7 +336,7 @@ point reaches the beginning or end of the buffer, stop there."
   :straight t)
 
 (use-package yaml-mode
-  :straight
+  :straight t
   :mode ("\\.yml\\'")
   :config
   (add-hook 'yaml-mode-hook
@@ -351,7 +354,6 @@ point reaches the beginning or end of the buffer, stop there."
 ;; (add-hook 'sh-mode-hook 'eglot-ensure))
 
 (use-package z80-mode
-  :straight f
   :load-path "vendor/")
 
 (add-to-list 'load-path "~/.emacs.d/vendor")
