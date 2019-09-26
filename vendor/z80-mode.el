@@ -74,7 +74,8 @@
   (set-syntax-table z80-mode-syntax-table)
   (use-local-map z80-mode-map)
   (set (make-local-variable 'font-lock-defaults) '(z80-font-lock-keywords))
-  (set (make-local-variable 'indent-line-function) 'z80-indent-line)
+  ;; i didn't like this
+  ;; (set (make-local-variable 'indent-line-function) 'z80-indent-line)
   (setq major-mode 'z80-mode)
   (setq mode-name "Z80")
   (run-hooks 'z80-mode-hook))
