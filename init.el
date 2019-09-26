@@ -350,6 +350,10 @@ point reaches the beginning or end of the buffer, stop there."
 ;; who knows when bash-language-server will work
 ;; (add-hook 'sh-mode-hook 'eglot-ensure))
 
+(use-package z80-mode
+  :straight f
+  :load-path "vendor/")
+
 (add-to-list 'load-path "~/.emacs.d/vendor")
 
 (add-to-list 'load-path "~/.emacs.d/customizations")
