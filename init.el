@@ -214,6 +214,10 @@ point reaches the beginning or end of the buffer, stop there."
     (interactive (list (magit-commit-arguments)))
     (magit-run-git "open" (magit-file-relative-name))))
 
+(use-package forge
+  :straight t
+  :after magit)
+
 (use-package parinfer
   :straight t
   :bind (:map parinfer-mode-map
