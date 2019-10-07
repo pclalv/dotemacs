@@ -381,4 +381,4 @@ point reaches the beginning or end of the buffer, stop there."
  '(cider-repl-history-file "~/.cider-history.eld")
  '(inf-ruby-default-implementation "pry")
  '(magit-log-section-arguments (quote ("--decorate" "-n256")))
- '(ruby-deep-indent-paren nil)
+ '(ruby-deep-indent-paren nil))
