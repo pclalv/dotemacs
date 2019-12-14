@@ -7,8 +7,3 @@
 
 (setq cider-annotate-completion-candidates t)
 (setq cider-stacktrace-suppressed-errors nil)
-
-;; TODO: get this to work?
-;; (add-hook 'clojure-mode-hook 'eglot-ensure)
-;; this didn't work; cryptic error message
-;; (add-to-list 'eglot-server-programs '(clojure-mode . ("/Users/paulalvarez/bin/clojure-lsp")))

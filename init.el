@@ -158,10 +158,13 @@ point reaches the beginning or end of the buffer, stop there."
     (let ((root (projectile-project-root dir)))
       (and root (cons 'transient root))))
   (add-to-list 'project-find-functions 'my-projectile-project-find-function)
+  (add-to-list 'eglot-server-programs '(clojure-mode . ("/Users/paulalvarez/bin/clojure-lsp")))
   (add-to-list 'eglot-server-programs '(go-mode . ("/Users/paulalvarez/code/go/bin/gopls")))
   :hook
-  (ruby-mode . eglot-ensure)
-  (go-mode . eglot-ensure))
+  ;; clojure-lsp still doesn't work out of the box
+  ;; (clojure-mode . eglot-ensure)
+  (go-mode . eglot-ensure)
+  (ruby-mode . eglot-ensure))
 
 (use-package electric
   :hook
