@@ -268,7 +268,10 @@ point reaches the beginning or end of the buffer, stop there."
   :straight t)
 
 (use-package cider
-  :straight t)
+  :straight t
+  :config
+  (setq cider-annotate-completion-candidates t)
+  (setq cider-stacktrace-suppressed-errors nil))
 
 (use-package dockerfile-mode
   :straight t)
@@ -368,7 +371,6 @@ point reaches the beginning or end of the buffer, stop there."
 (add-to-list 'load-path "~/.emacs.d/customizations")
 (load "navigation.el")
 (load "misc.el")
-(load "setup-clojure.el")
 (load "setup-ocaml.el")
 (load "setup-org.el")
 (load "setup-projectile-rails.el")
