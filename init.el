@@ -373,7 +373,6 @@ point reaches the beginning or end of the buffer, stop there."
 (load "misc.el")
 (load "setup-ocaml.el")
 (load "setup-org.el")
-(load "setup-projectile-rails.el")
 (load "setup-smalltalk.el")
 
 (custom-set-variables
