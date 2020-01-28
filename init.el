@@ -7,6 +7,9 @@
 (global-unset-key (kbd "C-z")) ; suspend-frame (minimize/maximize frame)
 (global-unset-key (kbd "C-<tab>"))
 (global-unset-key (kbd "C-x f"))
+;; no tabs
+(setq-default indent-tabs-mode nil)
+
 (rassq-delete-all 'dsssl-mode auto-mode-alist)
 (setq inhibit-startup-screen t)
 (when (fboundp 'tool-bar-mode)
