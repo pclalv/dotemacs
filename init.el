@@ -46,6 +46,21 @@
           (set-visited-file-name new-name t t)))))))
 (global-set-key (kbd "C-x C-r") 'rename-file-and-buffer)
 
+;; try to control emacs backup files
+(add-to-list 'backup-directory-alist '("." . "~/.emacs.d/backups"))
+;; (setq auto-save-file-name-transforms
+;;       `((".*" ,temporary-file-directory t)))
+;; source: https://www.emacswiki.org/emacs/BackupDirectory#toc2
+(setq backup-by-copying t      ; don't clobber symlinks
+      backup-directory-alist
+      '(("." . "~/.saves/"))    ; don't litter my fs tree
+      delete-old-versions t
+      kept-new-versions 6
+      kept-old-versions 2
+      version-control t)       ; use versioned backups
+
+(global-auto-revert-mode t)
+
 ;; Changing behavior of C-a
 (defun smarter-move-beginning-of-line (arg)
   "Move point back to indentation of beginning of line.
