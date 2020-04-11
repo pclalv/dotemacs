@@ -405,6 +405,10 @@ point reaches the beginning or end of the buffer, stop there."
  '(cider-repl-history-file "~/.cider-history.eld")
  '(inf-ruby-default-implementation "pry")
  '(magit-log-section-arguments (quote ("--decorate" "-n256")))
+ '(org-agenda-files (quote ("~/Dropbox (Personal)/habits.org")))
+ '(org-modules
+   (quote
+    (org-bbdb org-bibtex org-docview org-gnus org-habit org-info org-irc org-mhe org-rmail org-w3m)))
  '(ruby-deep-indent-paren nil))
 (custom-set-faces
  ;; custom-set-faces was added by Custom.
