@@ -10,6 +10,7 @@
   (add-to-list 'projectile-globally-ignored-directories "tmp")
   (add-to-list 'projectile-globally-ignored-directories "vendor"))
 
+;; consider using selectrum and prescient instead, now that helm has been ceased development
 (use-package helm
   :straight t
   :demand t
