@@ -239,28 +239,19 @@ point reaches the beginning or end of the buffer, stop there."
   :straight t
   :after magit)
 
-(use-package parinfer
+
+(use-package parinfer-rust-mode
   :straight t
-  :bind (:map parinfer-mode-map
-              ("C-," . parinfer-toggle-mode))
   :init
-  (progn
-    (setq parinfer-extensions
-          '(defaults       ; should be included.
-             pretty-parens  ; different paren styles for different modes.
-             smart-tab      ; C-b & C-f jump positions and smart shift with tab & S-tab.
-             smart-yank)))  ; Yank behavior depend on mode.
-  :config
-  ;; this is electric-pair-mode's job
-  (require 'bind-key)
-  (unbind-key "\"" parinfer-mode-map)
+  (setq parinfer-rust-auto-download t)
   :hook
-  (emacs-lisp-mode . parinfer-mode)
-  (common-lisp-mode . parinfer-mode)
-  (scheme-mode . parinfer-mode)
-  (lisp-mode . parinfer-mode)
-  (clojure-mode . parinfer-mode)
-  (clojurescript-mode . parinfer-mode))
+  (emacs-list-mode . parinfer-rust-mode)
+  (emacs-lisp-mode . parinfer-rust-mode)
+  (common-lisp-mode . parinfer-rust-mode)
+  (scheme-mode . parinfer-rust-mode)
+  (lisp-mode . parinfer-rust-mode)
+  (clojure-mode . parinfer-rust-mode)
+  (clojurescript-mode . parinfer-rust-mode))
 
 ;; just for package-list-packages
 (use-package package
