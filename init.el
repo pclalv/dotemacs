@@ -1,3 +1,16 @@
+;; BEGIN emacs feature/native-comp boilerplate from https://github.com/jimeh/build-emacs-for-macos
+(setq comp-speed 2)
+(when (boundp 'comp-eln-load-path)
+  (let ((eln-cache-dir (expand-file-name "cache/eln-cache/" user-emacs-directory))
+        (find-exec (executable-find "find")))
+    (setcar comp-eln-load-path eln-cache-dir)
+    ;; Quitting emacs while native compilation in progress can leave zero byte
+    ;; sized *.eln files behind. Hence delete such files during startup.
+    (when find-exec
+      (call-process find-exec nil nil nil eln-cache-dir
+                    "-name" "*.eln" "-size" "0" "-delete"))))
+;; END
+
 ;; ensure emacs is enforcing TLS
 ;; https://glyph.twistedmatrix.com/2015/11/editor-malware.html#fnref:4
 (setq tls-checktrust t)
@@ -372,12 +385,15 @@ point reaches the beginning or end of the buffer, stop there."
   :mode ("\\.bats\\'" . shell-script-mode)
   :config
   (setq sh-basic-offset 2
-	sh-indentation 2))
+        sh-indentation 2))
 ;; who knows when bash-language-server will work
 ;; (add-hook 'sh-mode-hook 'eglot-ensure))
 
 (use-package z80-mode
   :load-path "vendor/")
+
+(use-package jsonnet-mode
+  :straight t)
 
 (add-to-list 'load-path "~/.emacs.d/vendor")
 
@@ -401,9 +417,10 @@ point reaches the beginning or end of the buffer, stop there."
    (quote
     (org-bbdb org-bibtex org-docview org-gnus org-habit org-info org-irc org-mhe org-rmail org-w3m)))
  '(ruby-deep-indent-paren nil))
-(custom-set-faces
+(custom-set-faces)
  ;; custom-set-faces was added by Custom.
  ;; If you edit it by hand, you could mess it up, so be careful.
  ;; Your init file should contain only one such instance.
  ;; If there is more than one, they won't work right.
- )
+ 
+
