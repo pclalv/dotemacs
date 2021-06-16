@@ -232,12 +232,14 @@ point reaches the beginning or end of the buffer, stop there."
   (defun magit-open (&optional args)
     "Open the current file in github."
     (interactive (list (magit-commit-arguments)))
-    (magit-run-git "open" (magit-file-relative-name))))
+    (magit-run-git "open" (magit-file-relative-name)))
+
+  :custom
+  (magit-log-section-arguments '("--decorate" "-n256")))
 
 (use-package forge
   :straight t
   :after magit)
-
 
 (use-package parinfer-rust-mode
   :straight t
@@ -283,7 +285,9 @@ point reaches the beginning or end of the buffer, stop there."
   :straight t
   :config
   (setq cider-annotate-completion-candidates t)
-  (setq cider-stacktrace-suppressed-errors nil))
+  (setq cider-stacktrace-suppressed-errors nil)
+  :custom
+  (cider-repl-history-file "~/.cider-history.eld"))
 
 (use-package dockerfile-mode
   :straight t)
@@ -346,10 +350,15 @@ point reaches the beginning or end of the buffer, stop there."
 (use-package ruby-mode
   :straight t
   :config
-  (setq ruby-use-smie nil))
+  (setq ruby-use-smie nil)
+  :custom
+  (ruby-deep-indent-paren nil)
+  (ruby-indent-level 4))
 
 (use-package inf-ruby
-  :straight t)
+  :straight t
+  :custom
+  (inf-ruby-default-implementation "pry"))
 
 (use-package rspec-mode
   :straight t)
@@ -395,18 +404,17 @@ point reaches the beginning or end of the buffer, stop there."
  ;; If you edit it by hand, you could mess it up, so be careful.
  ;; Your init file should contain only one such instance.
  ;; If there is more than one, they won't work right.
- '(cider-repl-history-file "~/.cider-history.eld")
- '(inf-ruby-default-implementation "pry")
- '(magit-log-section-arguments (quote ("--decorate" "-n256")))
- '(org-agenda-files (quote ("~/Dropbox (Personal)/habits.org")))
+ '(org-agenda-files '("~/Dropbox (Personal)/habits.org"))
  '(org-modules
-   (quote
-    (org-bbdb org-bibtex org-docview org-gnus org-habit org-info org-irc org-mhe org-rmail org-w3m)))
- '(ruby-deep-indent-paren nil))
+   '(org-bbdb org-bibtex org-docview org-gnus org-habit org-info org-irc org-mhe org-rmail org-w3m)))
 (custom-set-faces)
  ;; custom-set-faces was added by Custom.
  ;; If you edit it by hand, you could mess it up, so be careful.
  ;; Your init file should contain only one such instance.
  ;; If there is more than one, they won't work right.
  
-
+ ;; custom-set-faces was added by Custom.
+ ;; If you edit it by hand, you could mess it up, so be careful.
+ ;; Your init file should contain only one such instance.
+ ;; If there is more than one, they won't work right.
+ 
