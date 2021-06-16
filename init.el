@@ -1,16 +1,3 @@
-;; BEGIN emacs feature/native-comp boilerplate from https://github.com/jimeh/build-emacs-for-macos
-(setq comp-speed 2)
-(when (boundp 'comp-eln-load-path)
-  (let ((eln-cache-dir (expand-file-name "cache/eln-cache/" user-emacs-directory))
-        (find-exec (executable-find "find")))
-    (setcar comp-eln-load-path eln-cache-dir)
-    ;; Quitting emacs while native compilation in progress can leave zero byte
-    ;; sized *.eln files behind. Hence delete such files during startup.
-    (when find-exec
-      (call-process find-exec nil nil nil eln-cache-dir
-                    "-name" "*.eln" "-size" "0" "-delete"))))
-;; END
-
 ;; ensure emacs is enforcing TLS
 ;; https://glyph.twistedmatrix.com/2015/11/editor-malware.html#fnref:4
 (setq tls-checktrust t)
