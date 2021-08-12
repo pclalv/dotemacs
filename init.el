@@ -49,8 +49,6 @@
           (set-visited-file-name new-name t t)))))))
 (global-set-key (kbd "C-x C-r") 'rename-file-and-buffer)
 
-;; try to control emacs backup files
-(add-to-list 'backup-directory-alist '("." . "~/.emacs.d/backups"))
 ;; (setq auto-save-file-name-transforms
 ;;       `((".*" ,temporary-file-directory t)))
 ;; source: https://www.emacswiki.org/emacs/BackupDirectory#toc2
@@ -225,10 +223,6 @@ point reaches the beginning or end of the buffer, stop there."
   :straight t
   :bind ("C-x g" . magit-status)
   :config
-  ;; per https://magit.vc/manual/magit/Performance.html#Performance
-  (setq vc-handled-backends nil)
-  (remove-hook 'magit-refs-sections-hook 'magit-insert-tags)
-
   (defun magit-open (&optional args)
     "Open the current file in github."
     (interactive (list (magit-commit-arguments)))
