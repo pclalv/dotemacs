@@ -389,8 +389,10 @@ point reaches the beginning or end of the buffer, stop there."
 (use-package z80-mode
   :load-path "vendor/")
 
-(use-package jsonnet-mode
-  :straight t)
+(use-package js
+  :config
+  (setq js-indent-level 2))
+
 
 (add-to-list 'load-path "~/.emacs.d/vendor")
 
