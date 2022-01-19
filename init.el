@@ -339,7 +339,12 @@ point reaches the beginning or end of the buffer, stop there."
 
 (use-package json-mode
   :straight t
-  :mode ("\\.json\\'"))
+  :mode ("\\.json\\'")
+  :config
+  (add-hook 'json-mode-hook
+            (lambda ()
+              (make-local-variable 'js-indent-level)
+              (setq js-indent-level 2))))
 
 (use-package markdown-mode
   :straight t
