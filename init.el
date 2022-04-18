@@ -7,6 +7,11 @@
 (global-unset-key (kbd "C-z")) ; suspend-frame (minimize/maximize frame)
 (global-unset-key (kbd "C-<tab>"))
 (global-unset-key (kbd "C-x f"))
+
+;; macos
+(setq mac-option-modifier 'meta)
+(setq mac-command-modifier 'super)
+
 ;; no tabs
 (setq-default indent-tabs-mode nil)
 
