@@ -182,6 +182,12 @@ point reaches the beginning or end of the buffer, stop there."
   (require 'consult-selectrum)
   (setq consult-project-function #'projectile-project-root))
 
+(use-package ctrlf
+  :straight t
+  :demand t
+  :config
+  (ctrlf-mode +1))
+
 (use-package ace-window
   :straight t
   :bind ("C-x o" . ace-window))
