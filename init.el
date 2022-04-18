@@ -185,7 +185,6 @@ point reaches the beginning or end of the buffer, stop there."
 
 (use-package eglot
   :straight t
-  :after projectile
   :bind (:map eglot-mode-map
               ("C-c e a" . eglot-code-actions)
               ("C-c e f" . eglot-format)
@@ -227,7 +226,6 @@ point reaches the beginning or end of the buffer, stop there."
   :demand t)
 
 (use-package hideshow
-  :after (ruby-mode)
   :bind
   ;; hideshow bindings suck, but this doesn't work
   (("C-c h" . hs-hide-block)
