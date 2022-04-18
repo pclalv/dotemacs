@@ -441,8 +441,6 @@ point reaches the beginning or end of the buffer, stop there."
 (add-to-list 'load-path "~/.emacs.d/vendor")
 
 (add-to-list 'load-path "~/.emacs.d/customizations")
-(load "navigation.el")
-(load "misc.el")
 (load "setup-ocaml.el")
 (load "setup-org.el")
 (load "setup-smalltalk.el")
