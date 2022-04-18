@@ -5,3 +5,8 @@ elpa/archives/melpa/archive-contents
 /desktops/
 /tutorial/
 /games/
+eln-cache/
+straight/
+var/
+parinfer-rust/
+auto-save-list/
