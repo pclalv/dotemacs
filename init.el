@@ -173,6 +173,15 @@ point reaches the beginning or end of the buffer, stop there."
   (selectrum-prescient-mode +1)
   (prescient-persist-mode +1))
 
+(use-package consult
+  :straight t
+  :demand t
+  :after selectrum
+  :bind ("C-c p s r" . consult-ripgrep)
+  :config
+  (require 'consult-selectrum)
+  (setq consult-project-function #'projectile-project-root))
+
 (use-package ace-window
   :straight t
   :bind ("C-x o" . ace-window))
