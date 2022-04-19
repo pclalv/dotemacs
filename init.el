@@ -1,8 +1,4 @@
-;; ensure emacs is enforcing TLS
-;; https://glyph.twistedmatrix.com/2015/11/editor-malware.html#fnref:4
-(setq tls-checktrust t)
-
-;; disable things.
+;; disable bindings that usually get in my way.
 (global-unset-key (kbd "s-t")) ; ns-popup-font-panel
 (global-unset-key (kbd "C-z")) ; suspend-frame (minimize/maximize frame)
 (global-unset-key (kbd "C-<tab>"))
