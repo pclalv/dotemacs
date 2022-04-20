@@ -140,6 +140,10 @@ point reaches the beginning or end of the buffer, stop there."
 
 (straight-use-package 'use-package)
 
+(use-package outshine
+  :straight t
+  :demand t)
+
 (use-package projectile
  :straight t
  :demand t
