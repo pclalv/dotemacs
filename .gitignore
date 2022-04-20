@@ -6,7 +6,9 @@ elpa/archives/melpa/archive-contents
 /tutorial/
 /games/
 eln-cache/
-straight/
 var/
 parinfer-rust/
 auto-save-list/
+
+forge-database.sqlite
+projectile.cache
