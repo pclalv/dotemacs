@@ -220,7 +220,6 @@ point reaches the beginning or end of the buffer, stop there."
 (use-package electric
   :hook
   (ruby-mode . electric-pair-mode)
-  (c-mode . electric-pair-mode)
   (cider-repl-mode . electric-pair-mode))
 
 ;; On OS X, an Emacs instance started from the graphical user
@@ -330,16 +329,6 @@ point reaches the beginning or end of the buffer, stop there."
   :straight t)
 
 ;;;;;;;;;;;;
-;; elixir ;;
-;;;;;;;;;;;;
-
-(use-package elixir-mode
-  :straight t)
-
-(use-package alchemist
-  :straight t)
-
-;;;;;;;;;;;;
 ;; golang ;;
 ;;;;;;;;;;;;
 
@@ -360,14 +349,6 @@ point reaches the beginning or end of the buffer, stop there."
 
 (use-package flymake-go
   :straight t)
-
-;;;;;;;;;;;;
-;; groovy ;;
-;;;;;;;;;;;;
-
-(use-package groovy-mode
-  :straight t
-  :mode ("\\.dsl\\'"))
 
 (use-package haskell-mode
   :straight t)
