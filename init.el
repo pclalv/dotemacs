@@ -3,6 +3,7 @@
 (global-unset-key (kbd "C-z")) ; suspend-frame (minimize/maximize frame)
 (global-unset-key (kbd "C-<tab>"))
 (global-unset-key (kbd "C-x f"))
+(global-unset-key (kbd "s-n"))
 
 ;; macos
 (setq mac-option-modifier 'meta)
