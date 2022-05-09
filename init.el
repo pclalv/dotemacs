@@ -181,6 +181,8 @@ point reaches the beginning or end of the buffer, stop there."
   :demand t
   :after selectrum
   :bind ("C-c p s r" . consult-ripgrep)
+  ;; FIXME: I really miss C-l being bound to
+  ;; helm-find-files-up-one-level in find-file minibuffer :(
   :config
   (require 'consult-selectrum)
   (setq consult-project-function #'projectile-project-root))
