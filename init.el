@@ -270,18 +270,18 @@ point reaches the beginning or end of the buffer, stop there."
 (use-package magit
   :straight t
   :bind ("C-x g" . magit-status)
-  :config
-  (defun magit-open (&optional args)
-    "Open the current file in github."
-    (interactive (list (magit-commit-arguments)))
-    (magit-run-git "open" (magit-file-relative-name)))
-
   :custom
   (magit-log-section-arguments '("--decorate" "-n256")))
 
 (use-package forge
   :straight t
   :after magit)
+
+(use-package git-link
+  :straight t
+  :bind ("C-c g l" . git-link)
+  :custom
+  (git-link-open-in-browser 1))
 
 (use-package parinfer-rust-mode
   :straight t
