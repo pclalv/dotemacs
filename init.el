@@ -38,6 +38,7 @@
 (global-set-key (kbd "C-x C-k") 'kill-region)
 (global-set-key (kbd "s-=") 'text-scale-increase)
 (global-set-key (kbd "s--") 'text-scale-decrease)
+(global-set-key (kbd "C-x C-f") 'find-file-at-point)
 
 (defun rename-file-and-buffer ()
   "Rename the current buffer and file it is visiting."
