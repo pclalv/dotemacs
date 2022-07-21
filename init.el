@@ -426,7 +426,9 @@ point reaches the beginning or end of the buffer, stop there."
   :load-path "vendor/")
 
 (use-package typescript-mode
-  :straight t)
+  :straight t
+  :custom
+  (typescript-indent-level 2))
 
 (use-package js
   :config
