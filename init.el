@@ -40,6 +40,12 @@
 (global-set-key (kbd "s--") 'text-scale-decrease)
 (global-set-key (kbd "C-x C-f") 'find-file-at-point)
 
+;; source: https://emacsredux.com/blog/2013/07/09/go-to-column/
+(defun er-go-to-column (column)
+  (interactive "nColumn: ")
+  (move-to-column column t))
+(global-set-key (kbd "M-g M-c") #'er-go-to-column)
+
 (defun rename-file-and-buffer ()
   "Rename the current buffer and file it is visiting."
   (interactive)
