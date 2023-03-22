@@ -5,6 +5,17 @@
 (global-unset-key (kbd "C-x f"))
 (global-unset-key (kbd "s-n"))
 
+;; I wanted this stuff when I thought I'd be using yabai and skhd, but
+;; I just don't feel interested in using those tools right now.
+;;
+;; (menu-bar-mode -1)
+
+;; ;; https://www.reddit.com/r/emacs/comments/b2r2oj/is_it_possible_to_disable_or_hide_the_titlebar_in/
+;; ;; hide decorations, but still allow Emacs window to be resized
+;; (setq default-frame-alist '((undecorated . t)))
+;; (add-to-list 'default-frame-alist '(drag-internal-border . 1))
+;; (add-to-list 'default-frame-alist '(internal-border-width . 5))
+
 ;; macos
 (setq mac-option-modifier 'meta)
 (setq mac-command-modifier 'super)
@@ -457,3 +468,21 @@ point reaches the beginning or end of the buffer, stop there."
 (load "setup-ocaml.el")
 (load "setup-org.el")
 (load "setup-smalltalk.el")
+(custom-set-variables
+ ;; custom-set-variables was added by Custom.
+ ;; If you edit it by hand, you could mess it up, so be careful.
+ ;; Your init file should contain only one such instance.
+ ;; If there is more than one, they won't work right.
+ '(org-agenda-files '("~/Desktop/notes/1-1.org"))
+ '(warning-suppress-types '((comp))))
+(custom-set-faces
+ ;; custom-set-faces was added by Custom.
+ ;; If you edit it by hand, you could mess it up, so be careful.
+ ;; Your init file should contain only one such instance.
+ ;; If there is more than one, they won't work right.
+ )
+ ;; custom-set-faces was added by Custom.
+ ;; If you edit it by hand, you could mess it up, so be careful.
+ ;; Your init file should contain only one such instance.
+ ;; If there is more than one, they won't work right.
+ 
