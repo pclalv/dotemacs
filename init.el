@@ -50,6 +50,7 @@
 (global-set-key (kbd "s-=") 'text-scale-increase)
 (global-set-key (kbd "s--") 'text-scale-decrease)
 (global-set-key (kbd "C-x C-f") 'find-file-at-point)
+(global-set-key (kbd "C-q") 'save-buffers-kill-emacs)
 
 ;; source: https://emacsredux.com/blog/2013/07/09/go-to-column/
 (defun er-go-to-column (column)
