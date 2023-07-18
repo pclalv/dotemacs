@@ -324,6 +324,17 @@ point reaches the beginning or end of the buffer, stop there."
   (add-to-list 'package-archives
                '("melpa" . "https://melpa.org/packages/") t))
 
+(use-package tsi
+  :straight `(tsi :type git
+                       :host github
+                       :repo "orzechowskid/tsi.el"))
+
+(use-package tsx-mode
+  :straight `(tsx-mode :type git
+                       :host github
+                       :repo "orzechowskid/tsx-mode.el"
+                       :branch "emacs28"))
+
 (use-package web-mode
   :straight t
   :mode ("\\.liquid\\'")
