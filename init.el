@@ -208,7 +208,6 @@ point reaches the beginning or end of the buffer, stop there."
 
 (use-package ctrlf
   :straight t
-  :demand t
   :config
   (ctrlf-mode +1))
 
@@ -333,7 +332,8 @@ point reaches the beginning or end of the buffer, stop there."
   :straight `(tsx-mode :type git
                        :host github
                        :repo "orzechowskid/tsx-mode.el"
-                       :branch "emacs28"))
+                       :branch "emacs28")
+  :mode ("\\.tsx\\'" "\\.js\\'"))
 
 (use-package web-mode
   :straight t
@@ -487,12 +487,12 @@ point reaches the beginning or end of the buffer, stop there."
  ;; If there is more than one, they won't work right.
  '(org-agenda-files '("~/Desktop/notes/1-1.org"))
  '(warning-suppress-types '((comp))))
-(custom-set-faces
+(custom-set-faces)
  ;; custom-set-faces was added by Custom.
  ;; If you edit it by hand, you could mess it up, so be careful.
  ;; Your init file should contain only one such instance.
  ;; If there is more than one, they won't work right.
- )
+ 
  ;; custom-set-faces was added by Custom.
  ;; If you edit it by hand, you could mess it up, so be careful.
  ;; Your init file should contain only one such instance.
