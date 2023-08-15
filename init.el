@@ -299,7 +299,7 @@ point reaches the beginning or end of the buffer, stop there."
   :straight t
   :bind ("C-c g l" . git-link)
   :custom
-  (git-link-open-in-browser 1))
+  (git-link-open-in-browser 't))
 
 (use-package parinfer-rust-mode
   :straight t
