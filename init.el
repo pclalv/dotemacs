@@ -52,6 +52,18 @@
 (global-set-key (kbd "C-x C-f") 'find-file-at-point)
 (global-set-key (kbd "C-q") 'save-buffers-kill-emacs)
 
+(defun unfill-paragraph ()
+  (interactive)
+  (let ((fill-column (point-max)))
+    (fill-paragraph nil)))
+
+(defun unfill-region ()
+  (interactive)
+  (let ((fill-column (point-max)))
+    (fill-region (region-beginning) (region-end) nil)))
+
+(global-set-key (kbd "M-Q") 'unfill-paragraph)
+
 ;; source: https://emacsredux.com/blog/2013/07/09/go-to-column/
 (defun er-go-to-column (column)
   (interactive "nColumn: ")
