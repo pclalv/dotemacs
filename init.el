@@ -340,21 +340,6 @@ point reaches the beginning or end of the buffer, stop there."
                        :host github
                        :repo "orzechowskid/tsi.el"))
 
-(use-package tsx-mode
-  :straight `(tsx-mode :type git
-                       :host github
-                       :repo "orzechowskid/tsx-mode.el"
-                       :branch "emacs28")
-  :mode ("\\.tsx\\'" "\\.js\\'"))
-
-(use-package web-mode
-  :straight t
-  :mode ("\\.liquid\\'")
-  :custom
-  (web-mode-markup-indent-offset 4)
-  (web-mode-css-indent-offset 4)
-  (web-mode-code-indent-offset 4))
-
 (use-package zoom-window
   :straight t
   :config
@@ -466,25 +451,6 @@ point reaches the beginning or end of the buffer, stop there."
 (use-package z80-mode
   :load-path "vendor/")
 
-(use-package typescript-mode
-  :straight t
-  :custom
-  (typescript-indent-level 2))
-
-(use-package js
-  :config
-  (setq js-indent-level 2))
-
-(use-package rjsx-mode
-  :straight t)
-
-(use-package tide
-  :straight t
-  :after (typescript-mode company flycheck)
-  :hook ((typescript-mode . tide-setup)
-         (typescript-mode . tide-hl-identifier-mode)
-         (before-save . tide-format-before-save)))
-;; TODO: look into something like this https://dev.to/viglioni/how-i-set-up-my-emacs-for-typescript-3eeh
 
 (add-to-list 'load-path "~/.emacs.d/vendor")
 
