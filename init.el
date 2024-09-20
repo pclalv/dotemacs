@@ -300,6 +300,8 @@ point reaches the beginning or end of the buffer, stop there."
 (use-package magit
   :straight t
   :bind ("C-x g" . magit-status)
+  :init (if (not (boundp 'project-switch-commands)) 
+            (setq project-switch-commands nil))
   :custom
   (magit-log-section-arguments '("--decorate" "-n256")))
 
