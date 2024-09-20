@@ -348,6 +348,9 @@ point reaches the beginning or end of the buffer, stop there."
   (setq zoom-window-mode-line-color "DarkGreen")
   :bind ("C-x C-z" . zoom-window-zoom))
 
+(use-package ahk-mode
+  :straight t)
+
 ;; languages
 
 ;;;;;;;;;;;;;
