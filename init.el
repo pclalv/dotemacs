@@ -53,6 +53,7 @@
 ;; (global-set-key (kbd "C-q") 'save-buffers-kill-emacs)
 (global-set-key (kbd "s-u") 'revert-buffer)
 (global-set-key (kbd "M-<f6>") 'just-one-space) ; hack because Windows hijacks Alt+space
+(global-set-key (kbd "s-0") (lambda () (interactive) (text-scale-adjust 0))) ; reset text size
 
 (defun unfill-paragraph ()
   (interactive)
