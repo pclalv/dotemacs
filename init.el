@@ -52,7 +52,6 @@
 (global-set-key (kbd "C-x C-f") 'find-file-at-point)
 ;; (global-set-key (kbd "C-q") 'save-buffers-kill-emacs)
 (global-set-key (kbd "s-u") 'revert-buffer)
-(global-set-key (kbd "M-<f6>") 'just-one-space) ; hack because Windows hijacks Alt+space
 (global-set-key (kbd "s-0") (lambda () (interactive) (text-scale-adjust 0))) ; reset text size
 
 (defun unfill-paragraph ()
@@ -464,6 +463,13 @@ point reaches the beginning or end of the buffer, stop there."
 
 (use-package lua-mode
   :straight t)
+
+(when (and (eq system-type 'gnu/linux)
+           (getenv "WSLENV"))
+  (global-set-key (kbd "M-<f6>") 'just-one-space) ; hack because Windows hijacks Alt+space
+
+  (setq browse-url-browser-function 'browse-url-generic
+        browse-url-generic-program "/mnt/c/Users/paul.alvarez/AppData/Local/BraveSoftware/Brave-Browser/Application/brave.exe"))
 
 ;; hack for AHK to recognize Emacs by its title when running under WSL
 ;; might need to occur after everything else since something else appears to muck with the frame title, too.
