@@ -462,6 +462,9 @@ point reaches the beginning or end of the buffer, stop there."
 (use-package powershell
   :straight t)
 
+(use-package lua-mode
+  :straight t)
+
 ;; hack for AHK to recognize Emacs by its title when running under WSL
 ;; might need to occur after everything else since something else appears to muck with the frame title, too.
 (setq frame-title-format "Emacs")
