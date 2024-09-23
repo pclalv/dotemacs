@@ -52,6 +52,7 @@
 (global-set-key (kbd "C-x C-f") 'find-file-at-point)
 ;; (global-set-key (kbd "C-q") 'save-buffers-kill-emacs)
 (global-set-key (kbd "s-u") 'revert-buffer)
+(global-set-key (kbd "M-<f6>") 'just-one-space) ; hack because Windows hijacks Alt+space
 
 (defun unfill-paragraph ()
   (interactive)
