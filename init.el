@@ -464,6 +464,31 @@ point reaches the beginning or end of the buffer, stop there."
 (use-package lua-mode
   :straight t)
 
+;; for edit with emacs extension
+;; if it's clunky, maybe try https://github.com/alpha22jp/atomic-chrome
+;; turns out Edit doesn't work in Outlook, and Atomic doesn't work with the example textareas (and divs disguised as fake textareas) on MDN's example page for textareas (maybe it's an iframe thing?) https://developer.mozilla.org/en-US/docs/Web/HTML/Element/textarea
+;; in any case, each has limitations.
+(use-package edit-server
+  :ensure t
+  :commands edit-server-start
+  :init (if after-init-time
+              (edit-server-start)
+            (add-hook 'after-init-hook
+                      #'(lambda() (edit-server-start))))
+  :config (setq edit-server-new-frame-alist
+                '((name . "Edit with Emacs FRAME")
+                  (top . 200)
+                  (left . 200)
+                  (width . 80)
+                  (height . 25)
+                  (minibuffer . t)
+                  (menu-bar-lines . t)
+                  (window-system . x))))
+
+(use-package atomic-chrome
+  :straight t
+  :config (setq atomic-chrome-buffer-open-style 'frame))
+
 (when (and (eq system-type 'gnu/linux)
            (getenv "WSLENV"))
   (global-set-key (kbd "M-<f6>") 'just-one-space) ; hack because Windows hijacks Alt+space
