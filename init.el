@@ -304,7 +304,8 @@ point reaches the beginning or end of the buffer, stop there."
   :init (if (not (boundp 'project-switch-commands)) 
             (setq project-switch-commands nil))
   :custom
-  (magit-log-section-arguments '("--decorate" "-n256")))
+  (magit-log-section-arguments '("--decorate" "-n256"))
+  :hook (magit-process-find-password-functions . magit-process-password-auth-source))
 
 (use-package forge
   :straight t
