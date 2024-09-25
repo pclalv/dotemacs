@@ -489,6 +489,9 @@ point reaches the beginning or end of the buffer, stop there."
   :straight t
   :config (setq atomic-chrome-buffer-open-style 'frame))
 
+(use-package sqlite3
+  :straight t)
+
 (when (and (eq system-type 'gnu/linux)
            (getenv "WSLENV"))
   (global-set-key (kbd "M-<f6>") 'just-one-space) ; hack because Windows hijacks Alt+space
