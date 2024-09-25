@@ -12,3 +12,6 @@ auto-save-list/
 
 forge-database.sqlite
 projectile.cache
+/straight/build-cache.el
+/straight/build/
+/straight/repos/
