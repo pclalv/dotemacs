@@ -228,6 +228,12 @@ point reaches the beginning or end of the buffer, stop there."
   :config
   (load-theme 'sanityinc-tomorrow-night t))
 
+;; hack; eglot and parinfer depend on this, but straight can't find it.
+(use-package track-changes
+  :straight `(track-changes :type git
+                            :host github
+                            :repo "emacs-straight/track-changes"))
+
 (use-package eglot
   :straight t
   :bind (:map eglot-mode-map
