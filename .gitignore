@@ -15,3 +15,5 @@ projectile.cache
 /straight/build-cache.el
 /straight/build/
 /straight/repos/
+/straight/links/
+/elpa/
