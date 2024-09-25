@@ -151,9 +151,8 @@ point reaches the beginning or end of the buffer, stop there."
 ;; full path in title bar
 (setq-default frame-title-format "%b (%f)")
 
-(global-linum-mode)
-
-(set-face-attribute 'linum nil :height 100)
+(global-display-line-numbers-mode 1)
+(set-face-attribute 'line-number nil :height 100)
 
 ;; don't make me type "yes" or "no"
 (defalias 'yes-or-no-p 'y-or-n-p)
