@@ -208,16 +208,10 @@ point reaches the beginning or end of the buffer, stop there."
   (selectrum-prescient-mode +1)
   (prescient-persist-mode +1))
 
-(use-package consult
+;; do I even use this? lol
+(use-package vertico
   :straight t
-  :demand t
-  :after selectrum
-  :bind ("C-c p s r" . consult-ripgrep)
-  ;; FIXME: I really miss C-l being bound to
-  ;; helm-find-files-up-one-level in find-file minibuffer :(
-  :config
-  (require 'consult-selectrum)
-  (setq consult-project-function #'projectile-project-root))
+  :init (vertico-mode))
 
 (use-package ctrlf
   :straight t
