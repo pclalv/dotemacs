@@ -337,11 +337,6 @@ point reaches the beginning or end of the buffer, stop there."
   (add-to-list 'package-archives
                '("melpa" . "https://melpa.org/packages/") t))
 
-(use-package tsi
-  :straight `(tsi :type git
-                  :host github
-                  :repo "orzechowskid/tsi.el"))
-
 (use-package zoom-window
   :straight t
   :config
