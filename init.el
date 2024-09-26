@@ -462,6 +462,7 @@ point reaches the beginning or end of the buffer, stop there."
 ;; turns out Edit doesn't work in Outlook, and Atomic doesn't work with the example textareas (and divs disguised as fake textareas) on MDN's example page for textareas (maybe it's an iframe thing?) https://developer.mozilla.org/en-US/docs/Web/HTML/Element/textarea
 ;; in any case, each has limitations.
 (use-package edit-server
+  :straight t
   :ensure t
   :commands edit-server-start
   :init (if after-init-time
