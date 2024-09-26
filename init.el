@@ -303,7 +303,7 @@ point reaches the beginning or end of the buffer, stop there."
             (setq project-switch-commands nil))
   :custom
   (magit-log-section-arguments '("--decorate" "-n256"))
-  :hook (magit-process-find-password-functions . magit-process-password-auth-source))
+  (magit-process-find-password-functions '(magit-process-password-auth-source)))
 
 (use-package forge
   :straight t
