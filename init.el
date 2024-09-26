@@ -23,8 +23,6 @@
 ;; no tabs
 (setq-default indent-tabs-mode nil)
 
-(setq auth-sources '("~/.authinfo"))
-
 (rassq-delete-all 'dsssl-mode auto-mode-alist)
 (setq inhibit-startup-screen t)
 (when (fboundp 'tool-bar-mode)
