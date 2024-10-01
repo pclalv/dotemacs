@@ -255,11 +255,6 @@ point reaches the beginning or end of the buffer, stop there."
   (go-mode . eglot-ensure)
   (ruby-mode . eglot-ensure))
 
-(use-package electric
-  :hook
-  (ruby-mode . electric-pair-mode)
-  (cider-repl-mode . electric-pair-mode))
-
 ;; On OS X, an Emacs instance started from the graphical user
 ;; interface will have a different environment than a shell in a
 ;; terminal window, because OS X does not run a shell during the
