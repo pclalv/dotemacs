@@ -481,6 +481,9 @@ point reaches the beginning or end of the buffer, stop there."
 (use-package sqlite3
   :straight t)
 
+(use-package puppet-mode
+  :straight t)
+
 (when (and (eq system-type 'gnu/linux)
            (getenv "WSLENV"))
   (global-set-key (kbd "M-<f6>") 'just-one-space) ; hack because Windows hijacks Alt+space
