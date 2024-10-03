@@ -412,7 +412,7 @@ point reaches the beginning or end of the buffer, stop there."
   (setq ruby-use-smie nil)
   :custom
   (ruby-deep-indent-paren nil)
-  (ruby-indent-level 4))
+  (ruby-indent-level 2))
 
 (use-package inf-ruby
   :straight t
