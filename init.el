@@ -495,6 +495,9 @@ point reaches the beginning or end of the buffer, stop there."
 ;; might need to occur after everything else since something else appears to muck with the frame title, too.
 (setq frame-title-format "Emacs")
 
+(add-to-list 'default-frame-alist
+             '(font . "Inconsolata Nerd Font:style=Regular"))
+
 (add-to-list 'load-path "~/.emacs.d/vendor")
 
 (add-to-list 'load-path "~/.emacs.d/customizations")
