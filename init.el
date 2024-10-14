@@ -490,17 +490,20 @@ point reaches the beginning or end of the buffer, stop there."
 
 (when (and (eq system-type 'gnu/linux)
            (getenv "WSLENV"))
+  ;; hack for AHK to recognize Emacs by its title when running under WSL
+  ;; might need to occur after everything else since something else appears to muck with the frame title, too.
+  (setq frame-title-format "Emacs")
+
   (global-set-key (kbd "M-<f6>") 'just-one-space) ; hack because Windows hijacks Alt+space
 
   (setq browse-url-browser-function 'browse-url-generic
         browse-url-generic-program "/mnt/c/Users/paul.alvarez/AppData/Local/BraveSoftware/Brave-Browser/Application/brave.exe"))
 
-;; hack for AHK to recognize Emacs by its title when running under WSL
-;; might need to occur after everything else since something else appears to muck with the frame title, too.
-(setq frame-title-format "Emacs")
 
-(add-to-list 'default-frame-alist
-             '(font . "Inconsolata Nerd Font:style=Regular"))
+(when (and (eq system-type 'gnu/linux)
+           (getenv "WSLENV"))
+  (add-to-list 'default-frame-alist
+               '(font . "Inconsolata Nerd Font:style=Regular")))
 
 (add-to-list 'load-path "~/.emacs.d/vendor")
 
