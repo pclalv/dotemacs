@@ -505,6 +505,10 @@ point reaches the beginning or end of the buffer, stop there."
   (add-to-list 'default-frame-alist
                '(font . "Inconsolata Nerd Font:style=Regular")))
 
+;; I like Menlo, not Inconsolata.
+(add-to-list 'default-frame-alist
+               '(font . "Menlo"))
+
 (add-to-list 'load-path "~/.emacs.d/vendor")
 
 (add-to-list 'load-path "~/.emacs.d/customizations")
