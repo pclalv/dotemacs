@@ -497,11 +497,8 @@ point reaches the beginning or end of the buffer, stop there."
   (global-set-key (kbd "M-<f6>") 'just-one-space) ; hack because Windows hijacks Alt+space
 
   (setq browse-url-browser-function 'browse-url-generic
-        browse-url-generic-program "/mnt/c/Users/paul.alvarez/AppData/Local/BraveSoftware/Brave-Browser/Application/brave.exe"))
+        browse-url-generic-program "/mnt/c/Users/paul.alvarez/AppData/Local/BraveSoftware/Brave-Browser/Application/brave.exe")
 
-
-(when (and (eq system-type 'gnu/linux)
-           (getenv "WSLENV"))
   (add-to-list 'default-frame-alist
                '(font . "MesloLGM Nerd Font Mono:style=Regular"))
   (set-face-attribute 'default nil :height 100))
