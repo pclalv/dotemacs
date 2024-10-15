@@ -507,14 +507,9 @@ point reaches the beginning or end of the buffer, stop there."
   (setq browse-url-browser-function 'browse-url-generic
         browse-url-generic-program "/mnt/c/Users/paul.alvarez/AppData/Local/BraveSoftware/Brave-Browser/Application/brave.exe")
 
-  (add-to-list 'default-frame-alist
-               '(font . "MesloLGM Nerd Font Mono:style=Regular"))
-  (setq default-frame-alist
-        '((font . "MesloLGM Nerd Font Mono:style=Regular")
-          (height . 100)))
+  (set-face-attribute 'default nil :font "MesloLGM Nerd Font Mono:style=Regular")
   (set-face-attribute 'default nil :height 100))
 
-;; I like Menlo, not Inconsolata.
 (when (eq system-type 'darwin)
   (add-to-list 'default-frame-alist
                '(font . "Menlo")))
@@ -526,9 +521,9 @@ point reaches the beginning or end of the buffer, stop there."
  ;; If there is more than one, they won't work right.
  '(org-agenda-files '("~/Desktop/notes/1-1.org"))
  '(warning-suppress-types '((comp))))
-(custom-set-faces
+(custom-set-faces)
  ;; custom-set-faces was added by Custom.
  ;; If you edit it by hand, you could mess it up, so be careful.
  ;; Your init file should contain only one such instance.
  ;; If there is more than one, they won't work right.
- )
+ 
