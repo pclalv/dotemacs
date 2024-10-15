@@ -489,6 +489,13 @@ point reaches the beginning or end of the buffer, stop there."
   :straight t
   :mode "\\.nix\\'")
 
+(add-to-list 'load-path "~/.emacs.d/vendor")
+
+(add-to-list 'load-path "~/.emacs.d/customizations")
+(load "setup-ocaml.el")
+(load "setup-org.el")
+(load "setup-smalltalk.el")
+
 (when (and (eq system-type 'gnu/linux)
            (getenv "WSLENV"))
   ;; hack for AHK to recognize Emacs by its title when running under WSL
@@ -502,6 +509,9 @@ point reaches the beginning or end of the buffer, stop there."
 
   (add-to-list 'default-frame-alist
                '(font . "MesloLGM Nerd Font Mono:style=Regular"))
+  (setq default-frame-alist
+        '((font . "MesloLGM Nerd Font Mono:style=Regular")
+          (height . 100)))
   (set-face-attribute 'default nil :height 100))
 
 ;; I like Menlo, not Inconsolata.
@@ -509,12 +519,6 @@ point reaches the beginning or end of the buffer, stop there."
   (add-to-list 'default-frame-alist
                '(font . "Menlo")))
 
-(add-to-list 'load-path "~/.emacs.d/vendor")
-
-(add-to-list 'load-path "~/.emacs.d/customizations")
-(load "setup-ocaml.el")
-(load "setup-org.el")
-(load "setup-smalltalk.el")
 (custom-set-variables
  ;; custom-set-variables was added by Custom.
  ;; If you edit it by hand, you could mess it up, so be careful.
