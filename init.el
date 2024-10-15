@@ -504,8 +504,9 @@ point reaches the beginning or end of the buffer, stop there."
   (set-face-attribute 'default nil :height 100))
 
 ;; I like Menlo, not Inconsolata.
-(add-to-list 'default-frame-alist
-               '(font . "Menlo"))
+(when (eq system-type 'darwin)
+  (add-to-list 'default-frame-alist
+               '(font . "Menlo")))
 
 (add-to-list 'load-path "~/.emacs.d/vendor")
 
