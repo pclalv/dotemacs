@@ -384,7 +384,8 @@ point reaches the beginning or end of the buffer, stop there."
   :straight t)
 
 (use-package flymake-go
-  :straight t)
+  :straight t
+  :requires flymake)
 
 (use-package haskell-mode
   :straight t)
