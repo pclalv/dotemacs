@@ -503,7 +503,8 @@ point reaches the beginning or end of the buffer, stop there."
 (when (and (eq system-type 'gnu/linux)
            (getenv "WSLENV"))
   (add-to-list 'default-frame-alist
-               '(font . "MesloLGM Nerd Font Mono:style=Regular")))
+               '(font . "MesloLGM Nerd Font Mono:style=Regular"))
+  (set-face-attribute 'default nil :height 100))
 
 ;; I like Menlo, not Inconsolata.
 (add-to-list 'default-frame-alist
