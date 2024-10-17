@@ -506,9 +506,11 @@ point reaches the beginning or end of the buffer, stop there."
 
   (setq browse-url-browser-function 'browse-url-generic
         browse-url-generic-program "/mnt/c/Users/paul.alvarez/AppData/Local/BraveSoftware/Brave-Browser/Application/brave.exe")
+  (set-frame-font "MesloLGM Nerd Font"))
+  ;; (setq default-frame-alist nil))
 
-  (set-face-attribute 'default nil :font "MesloLGM Nerd Font Mono:style=Regular")
-  (set-face-attribute 'default nil :height 100))
+  ;; (set-face-attribute 'default nil :font "MesloLGM Nerd Font Mono:style=Regular")
+  ;; (set-face-attribute 'default nil :height 100))
 
 (when (eq system-type 'darwin)
   (add-to-list 'default-frame-alist
