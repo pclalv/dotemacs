@@ -521,7 +521,12 @@ point reaches the beginning or end of the buffer, stop there."
  ;; If there is more than one, they won't work right.
  '(org-agenda-files '("~/Desktop/notes/1-1.org"))
  '(warning-suppress-types '((comp))))
-(custom-set-faces)
+(custom-set-faces
+ ;; custom-set-faces was added by Custom.
+ ;; If you edit it by hand, you could mess it up, so be careful.
+ ;; Your init file should contain only one such instance.
+ ;; If there is more than one, they won't work right.
+ '(fixed-pitch ((t (:family "Meslo")))))
  ;; custom-set-faces was added by Custom.
  ;; If you edit it by hand, you could mess it up, so be careful.
  ;; Your init file should contain only one such instance.
